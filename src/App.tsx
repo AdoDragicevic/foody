@@ -1,5 +1,5 @@
-function App() {
-  return <h1>Hello world!</h1>;
-}
+import PagesRoutes from "./pages/PagesRoutes";
+
+const App = () => <PagesRoutes />;
 
 export default App;
