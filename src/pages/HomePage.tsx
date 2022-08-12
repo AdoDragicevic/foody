@@ -1,5 +1,6 @@
-import Header from "../../components/layout/Header";
-import UserNav from "../../components/navigation/UserNav";
+import Header from "../components/layout/Header";
+import UserNav from "../components/navigation/UserNav";
+
 
 const HomePage = () => (
   <>
