@@ -10,12 +10,17 @@ const HomePage = () => (
 
     <main className="home-page__main">
 
-      <section className="home-page__section">
-        <h1>Welcome section</h1>
+      <section className="home-page__section home-page__section--welcome">
+        <div className="home-page__welcome">
+          <h1 className="title-primary mt-lg mb-xs">Welcome to Foody!</h1>
+          <h3 className="title-tertiary">Best restaurants at your dispsal</h3>
+        </div>
+        <button className="home-page__btn btn btn-main">Find all restaurants</button>
       </section>
 
       <section className="home-page__section">
         <h2>Special offers</h2>
+        
       </section>
 
       <section className="home-page__section">

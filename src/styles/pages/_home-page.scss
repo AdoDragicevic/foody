@@ -1,7 +1,9 @@
 .home-page {
 
   &__header {
-
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   &__main {
@@ -12,5 +14,17 @@
     min-height: 50vh;
     text-align: center;
     padding: 5rem;
+
+    &--welcome {
+      background-color: $color-primary;
+    }
+  }
+
+  &__welcome {
+    margin-top: 11rem;
+  }
+
+  &__btn {
+    margin-top: 6rem;
   }
 }

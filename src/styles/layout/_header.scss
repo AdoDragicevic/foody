@@ -2,9 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 11rem;
+  height: $header-height;
   padding: 0 6vw;
   background-color: $color-primary;
+  width: 100vw;
+
+  &__link {
+    text-decoration: none;
+    font-family: inherit;
+  }
 
   &__logo {
     color: $color-secondary;
