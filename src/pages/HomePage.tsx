@@ -5,7 +5,6 @@ import UserNav from "../components/navigation/UserNav";
 const HomePage = () => (
   <>
     <Header className="home-page__header">
-      <h2>Foody</h2>
       <UserNav />
     </Header>
 

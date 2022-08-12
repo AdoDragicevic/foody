@@ -4,6 +4,12 @@
   align-items: center;
   height: 11rem;
   padding: 0 6vw;
+  background-color: $color-primary;
+
+  &__logo {
+    color: $color-secondary;
+    font-size: 3.5rem;
+  }
 }
 
 /*
