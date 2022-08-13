@@ -28,3 +28,9 @@ export interface FeatureProps {
   title: string;
   description: string;
 }
+
+export interface PictureCardProps {
+  img: string;
+  title: string;
+  leadsToUrl: string;
+}

@@ -1,0 +1,57 @@
+.picture-card {
+  border-radius: 30px;
+  height: 40rem;
+  position: relative;
+  display: inline-block;
+  
+
+  &:hover &__img {
+    filter: brightness(.5);
+  }
+
+  &:hover &__btn {
+    background-color: $color-secondary;
+    color: white;
+  }
+
+  &:hover &__title {
+    transform: translateY(-1rem);
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: white;
+    text-align: start;
+    width: 80%;
+    transition: all .4s ease;
+  }
+
+  &__img {
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.7);
+    text-shadow: 2px 2px #ff0000;
+    transition: all .4s ease;
+  }
+
+  &__btn {
+    position: absolute;
+    right: -1.5rem;
+    top: 70%;
+    background-color: $color-primary;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    text-align: center;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: all .4s ease;
+  }
+}

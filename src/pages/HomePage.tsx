@@ -6,7 +6,10 @@ import SpecialOfferList from "../components/restaurants/SpecialOfferList";
 import { IoRestaurantOutline } from "react-icons/io5";
 import { MdDeliveryDining } from "react-icons/md";
 import { RiRecycleLine } from "react-icons/ri";
-
+import PictureCard from "../components/UI/PictureCard";
+import employeeImg from "../imgs/employee.jpg";
+import restaurantImg from "../imgs/restaurant.jpg";
+import teamImg from "../imgs/team.jpg";
 
 
 const HomePage = () => (
@@ -29,6 +32,7 @@ const HomePage = () => (
         </path>
       </svg>
 
+
       <section className="home-page__section home-page__section--special-offers">
         <h3 className="title-tertiary">Special offers</h3>
         <SpecialOfferList />
@@ -38,30 +42,36 @@ const HomePage = () => (
     
       <section className="home-page__section home-page__section--why-foody">
         <h3 className="title-tertiary">Why Foody?</h3>
-        <ul className="home-page__feature-list">
+        <ul className="home-page__list">
           
-          <li className="home-page__feature-item">
+          <li className="home-page__list-item">
             <Feature icon={<IoRestaurantOutline />} title="Great food" description="Excellent selection of best restaurants in yout town." />
           </li>
 
-          <li className="home-page__feature-item">
+          <li className="home-page__list-item">
             <Feature icon={<RiRecycleLine />} title="Environment" description="We deliver food in 100% recycable materials." />
           </li>
 
-          <li className="home-page__feature-item">
+          <li className="home-page__list-item">
             <Feature icon={<MdDeliveryDining />} title="Free delivery" description="Deliveries are completelly fee of charge." />
           </li>
         </ul>
       </section>
-     
-      
+
 
       <section className="home-page__section">
-        <h2>Download the mobile version!</h2>
-      </section>
-
-      <section className="home-page__section">
-        <h2>Work with us!</h2>
+        <h2 className="title-tertiary">Work with us!</h2>
+        <ul className="home-page__list">
+          <li className="home-page__list-item home-page__list-item--picture-card">
+            <PictureCard title="Earn extra money as currier" leadsToUrl="#" img={employeeImg}  />
+          </li>
+          <li className="home-page__list-item home-page__list-item--picture-card">
+            <PictureCard title="Sign up as a restaurant partner" leadsToUrl="#" img={restaurantImg}  />
+          </li>
+          <li className="home-page__list-item home-page__list-item--picture-card">
+            <PictureCard title="Join the team building Foody app" leadsToUrl="#" img={teamImg}  />
+          </li>
+        </ul>
       </section>
 
     </main>

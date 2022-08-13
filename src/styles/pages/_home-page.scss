@@ -40,7 +40,7 @@
     margin-top: 6rem;
   }
 
-  &__feature-list {
+  &__list {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -48,8 +48,12 @@
     flex-wrap: wrap;
   }
 
-  &__feature-item {
+  &__list-item {
     margin-top: 5rem;
+
+    &--picture-card {
+      flex: 0 1 30rem;
+    }
   }
 
 }
