@@ -3,6 +3,10 @@ import Feature from "../components/features/Feature";
 import Header from "../components/layout/Header";
 import UserNav from "../components/navigation/UserNav";
 import SpecialOfferList from "../components/restaurants/SpecialOfferList";
+import { IoRestaurantOutline } from "react-icons/io5";
+import { MdDeliveryDining } from "react-icons/md";
+import { RiRecycleLine } from "react-icons/ri";
+
 
 
 const HomePage = () => (
@@ -35,8 +39,17 @@ const HomePage = () => (
       <section className="home-page__section home-page__section--why-foody">
         <h3 className="title-tertiary">Why Foody?</h3>
         <ul className="home-page__feature-list">
+          
           <li className="home-page__feature-item">
-            <Feature />
+            <Feature icon={<IoRestaurantOutline />} title="Great food" description="Excellent selection of best restaurants in yout town." />
+          </li>
+
+          <li className="home-page__feature-item">
+            <Feature icon={<RiRecycleLine />} title="Environment" description="We deliver food in 100% recycable materials." />
+          </li>
+
+          <li className="home-page__feature-item">
+            <Feature icon={<MdDeliveryDining />} title="Free delivery" description="Deliveries are completelly fee of charge." />
           </li>
         </ul>
       </section>

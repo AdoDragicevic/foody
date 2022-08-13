@@ -22,3 +22,9 @@ export interface RestaurantProps {
   rating: number;
   imgUrl: string;
 }
+
+export interface FeatureProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}

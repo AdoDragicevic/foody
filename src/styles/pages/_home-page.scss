@@ -42,16 +42,14 @@
 
   &__feature-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
     flex-wrap: wrap;
-    margin: 8rem auto;
-    max-width: 100rem;
   }
 
-  &__features-item {
-    
+  &__feature-item {
+    margin-top: 5rem;
   }
-  
+
 }
