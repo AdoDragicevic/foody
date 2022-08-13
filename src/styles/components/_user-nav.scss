@@ -1,0 +1,30 @@
+.user-nav {
+  display: flex;
+
+  &__link {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    margin-left: 1.5rem;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: relative;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .1);
+  }
+
+  &__link:hover &__tag {
+    opacity: 1;
+    transform: translateY(4rem);
+  }
+
+  &__tag {
+    font-size: 1rem;
+    letter-spacing: .5px;
+    position: absolute;
+    opacity: 0;
+    transition: all .4s ease;
+  }
+}
