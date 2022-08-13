@@ -4,9 +4,9 @@
   position: relative;
   display: inline-block;
   
-
   &:hover &__img {
     filter: brightness(.5);
+    transform: translateY(-1px) scale(1.015);
   }
 
   &:hover &__btn {
