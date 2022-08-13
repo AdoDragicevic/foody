@@ -3,7 +3,7 @@
   &__header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; 
   }
 
   &__main {
@@ -14,10 +14,22 @@
     min-height: 50vh;
     text-align: center;
     padding: 5rem;
+    padding-bottom: 8rem;    
 
     &--welcome {
       background-color: $color-primary;
+      padding-bottom: 2.5rem;
     }
+
+    &--special-offers {
+      padding-top: 0;
+      margin-top: -3rem;
+    }
+
+    &--why-foody {
+      background-color: $color-secondary-light;
+    }
+
   }
 
   &__welcome {
@@ -27,4 +39,19 @@
   &__btn {
     margin-top: 6rem;
   }
+
+  &__feature-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 8rem auto;
+    max-width: 100rem;
+  }
+
+  &__features-item {
+    
+  }
+  
 }

@@ -1,18 +1,13 @@
 .restaurant-list {
 
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  max-width: 134rem;
-  margin: 0 auto;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  margin: 5rem auto;
+
 
   &__item {
-    flex-grow: 1;
-    min-width: 30%;
-    max-width: 40rem;
-    margin-right: 1.6666%;
-    margin-left: 1.6666%;
+    
   }
 }

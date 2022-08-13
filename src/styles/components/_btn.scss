@@ -1,28 +1,55 @@
 .btn {
   border: none;
   outline: none;
-  padding: 1.5rem 4rem;
   cursor: pointer;
   text-transform: uppercase;
-  border-radius: 25px;
   font-size: 1.4rem;
-  transition: all .2s;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 1rem 2rem #e19f17;
-  background-color: $color-secondary;
-  color: white;
-  
-  &:hover {
-    transform: translateY(-1px);
-    /* box-shadow: offsetX, offsetY, blure, color */
-    box-shadow: 0 1.5rem 2rem #e19f17;
+  transition: all .2s;
 
-    
+  &-main {
+    box-shadow: 0 .5rem 2rem #e19f17;
+    background-color: $color-secondary;
+    color: white;
+    border-radius: 25px;
+    padding: 1.3rem 4rem;
+
+    &:hover {
+      transform: translateY(-1px);
+      /* box-shadow: offsetX, offsetY, blure, color */
+      box-shadow: 0 1.5rem 2rem #e19f17;
+    }
+  
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 1rem 1rem #e19f17;
+    }
   }
 
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 0 1rem 1rem #e19f17;
+  &-secondary {
+    border-bottom: 1px solid $color-secondary;
+    color: $color-secondary;
+    padding: .4rem 1.4rem;
+    max-width: max-content;
+    transition: all .2s ease;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $color-secondary;
+      color: #fff;
+      border-radius: 3px;
+    }
+
+    &:hover {
+      transform: translateY(-1px);
+      /* box-shadow: offsetX, offsetY, blure, color */
+      box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, .15);
+    }
+  
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
+    }
   }
 }
