@@ -1,18 +1,17 @@
 export interface Restaurant {
-  info: RestaurantInfo;
+  // in db Restaurant is stored without id, after fetch we add the key under which it's stored as its id
+  name: string;
+  averageDeliveryTimeInMinutes: number;
+  discount: number;
   contact: RestaurantContact;
+  rating: number;
+  imgUrl: string;
   menu: {
     [category: string]: MenuItem[];
   };
   reviews: {
     [authorId: string]: Review;
   }
-}
-
-export interface RestaurantInfo {
-  name: string;
-  averageDeliveryTimeInMinutes: number;
-  discountPercent: number;
 }
 
 export interface RestaurantContact {

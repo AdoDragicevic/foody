@@ -3,27 +3,25 @@ import { useCallback, useState } from "react";
 import { RequestStatus } from "../models/htttp";
 
 
-const useHttpStates = (requestFn: () => Promise<any>, isLoading = false) => {
+const useHttpStates = <T>(requestFn: () => Promise<any>, isLoading = false) => {
 
   const initialRequestStatus = isLoading ? RequestStatus.LOADING : RequestStatus.NONE;
   
   const [requestStatus, setRequestStatus] = useState(initialRequestStatus);
-  const [error, setError] = useState("");
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<T | null>(null);
 
   const sendRequest = useCallback(() => {
     setRequestStatus(RequestStatus.LOADING);
     requestFn()
     .then( (res: any) => {
-      if (!res.ok) throw new Error("Failed to load data");
+      if (!res.ok) throw new Error();
       return res.json();
     })
-    .then( (data: any) => {
+    .then( (data: T) => {
       setData(data);
       setRequestStatus(RequestStatus.SUCCESS);
     })
-    .catch( (err: string) => {
-      setError(err);
+    .catch( () => {
       setRequestStatus(RequestStatus.ERROR);
     })
   }, [requestFn]);
@@ -31,8 +29,7 @@ const useHttpStates = (requestFn: () => Promise<any>, isLoading = false) => {
   return {
     sendRequest,
     requestStatus,
-    data,
-    error
+    data
   }
 };
 

@@ -1,5 +1,6 @@
 import Header from "../components/layout/Header";
 import UserNav from "../components/navigation/UserNav";
+import SpecialOfferList from "../components/restaurants/SpecialOfferList";
 
 
 const HomePage = () => (
@@ -20,7 +21,7 @@ const HomePage = () => (
 
       <section className="home-page__section">
         <h2>Special offers</h2>
-        
+        <SpecialOfferList />
       </section>
 
       <section className="home-page__section">
