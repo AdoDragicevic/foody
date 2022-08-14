@@ -3,7 +3,12 @@
   height: 40rem;
   position: relative;
   display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 12px;
+  }
+
   &:hover &__img {
     filter: brightness(.5);
     transform: translateY(-1px) scale(1.015);

@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { IoRestaurantOutline } from "react-icons/io5";
+import { MdDeliveryDining } from "react-icons/md";
+import { RiRecycleLine } from "react-icons/ri";
+
 import Feature from "../components/features/Feature";
 import Header from "../components/layout/Header";
 import UserNav from "../components/navigation/UserNav";
 import SpecialOfferList from "../components/restaurants/SpecialOfferList";
-import { IoRestaurantOutline } from "react-icons/io5";
-import { MdDeliveryDining } from "react-icons/md";
-import { RiRecycleLine } from "react-icons/ri";
 import PictureCard from "../components/UI/PictureCard";
+import Footer from "../components/layout/Footer";
+
 import employeeImg from "../imgs/employee.jpg";
 import restaurantImg from "../imgs/restaurant.jpg";
 import teamImg from "../imgs/team.jpg";
@@ -18,7 +21,7 @@ const HomePage = () => (
       <UserNav />
     </Header>
 
-    <main className="home-page__main">
+    <main>
 
       <section className="home-page__section home-page__section--welcome">
         <div className="home-page__welcome">
@@ -55,6 +58,7 @@ const HomePage = () => (
           <li className="home-page__list-item">
             <Feature icon={<MdDeliveryDining />} title="Free delivery" description="Deliveries are completelly fee of charge." />
           </li>
+          
         </ul>
       </section>
 
@@ -76,9 +80,7 @@ const HomePage = () => (
 
     </main>
 
-    <footer>
-      Footer
-    </footer>
+    <Footer />
   </>
 );
 
