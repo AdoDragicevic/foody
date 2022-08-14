@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
+import RestaurantsPage from "./RestaurantsPage";
 
 
 const PagesRoutes = () => {
@@ -8,7 +9,7 @@ const PagesRoutes = () => {
 
       <Route path="/" element={ <HomePage /> } />
       
-      <Route path="/restaurants" element={ <p>Restaurants page</p>} />
+      <Route path="/restaurants" element={ <RestaurantsPage />} />
       
       <Route path="/restaurants/:id" element={ <p>Restaurant page</p>} />
       
