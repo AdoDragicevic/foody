@@ -34,3 +34,13 @@ export interface PictureCardProps {
   title: string;
   leadsToUrl: string;
 }
+
+export interface ToggleBtnProps {
+  text: string;
+  icon: ReactNode;
+  onClick: () => void;
+}
+
+export interface RestaurantFiltersHeaderProps {
+  text: string;
+}

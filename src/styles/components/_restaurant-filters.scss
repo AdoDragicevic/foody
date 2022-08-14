@@ -1,0 +1,30 @@
+.restaurant-filters {
+  background-color: $color-secondary-light;
+  width: 20rem;
+  height: calc(100vh - $header-height);
+  padding: 4rem 3rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  &__title {
+    margin-left: 1rem;
+    letter-spacing: 1px;
+    //text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      margin-bottom: 1rem;
+    }
+  }
+  
+}

@@ -1,7 +1,7 @@
 import Header from "../components/layout/Header";
 import Search from "../components/search/Search";
 import UserNav from "../components/navigation/UserNav";
-import Footer from "../components/layout/Footer";
+import RestaurantFilters from "../components/restaurants/restaurantFilters/RestaurantFilters";
 
 
 const RestaurantsPage = () => {
@@ -13,15 +13,10 @@ const RestaurantsPage = () => {
       </Header>
 
       <main className="restaurants-page__main">
-
-        <nav className="restaurants-page__filters">
-
-        </nav>
-
-
+        <RestaurantFilters />
       </main>
 
-      <Footer />
+      
     </>
   );
 };

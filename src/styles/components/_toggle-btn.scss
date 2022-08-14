@@ -1,0 +1,38 @@
+.toggle-btn {
+  display: flex;
+  align-items: center;
+
+  &:hover &__text {
+    opacity: 1;
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.2rem;
+    background-color: $color-gray;
+    transition: all .4s ease;
+
+    &--active {
+      background-color: $color-primary;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    text-transform: none;
+    opacity: .7;
+    transition: all .4s ease;
+
+    &--active {
+      opacity: 1;
+    } 
+  }
+
+   
+
+}

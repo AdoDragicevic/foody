@@ -32,7 +32,9 @@
     transition: all .4s ease-in;
   }
 
+  &__input:not(:placeholder-shown) + &__icon,
   &__input:focus + &__icon {
     left: 2.5rem;
   }
+
 }
