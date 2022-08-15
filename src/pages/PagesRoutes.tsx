@@ -27,9 +27,7 @@ const PagesRoutes = () => {
 
       <Route path="/page-not-found" element={<p>Page not found</p>} />
 
-      <Route path="*">
-        <Navigate to="/page-not-found" replace />
-      </Route>
+      <Route path="*" element={<Navigate to="/page-not-found" replace />} />
     
     </Routes>
   )
