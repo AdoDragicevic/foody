@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./HomePage";
 import RestaurantsPage from "./RestaurantsPage";
 
@@ -24,6 +24,12 @@ const PagesRoutes = () => {
       <Route path="/cart" element={ <p>Cart page</p>} />
       
       <Route path="/auth" element={ <p>Auth page</p>} />
+
+      <Route path="/page-not-found" element={<p>Page not found</p>} />
+
+      <Route path="*">
+        <Navigate to="/page-not-found" replace />
+      </Route>
     
     </Routes>
   )
