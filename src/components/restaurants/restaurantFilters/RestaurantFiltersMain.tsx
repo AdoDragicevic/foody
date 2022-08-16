@@ -49,7 +49,7 @@ const RestaurantFiltersMain = () => {
       </li>
       <li className="restaurant-filters__list-item">
         <ToggleBtn 
-          text="Opened Now" 
+          text="Open Now" 
           icon={<BsDoorOpen />} 
           onClick={ () => toggleFilter("open") }
           isActive={filters.has("open")} 
