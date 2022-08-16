@@ -37,4 +37,27 @@
     left: 2.5rem;
   }
 
+  &__reset {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-gray;
+    color: $color-white;
+    transition: all .4s ease;
+
+    &:hover {
+      
+      background-color: $color-black;
+    }
+  }
+
 }

@@ -4,7 +4,7 @@ import useSearch from "../../hooks/useSearch";
 
 const Search = () => {
 
-  const [inputRef, handleInputChange] = useSearch();
+  const [inputRef, defaultVal, updateInput, resetInput] = useSearch();
 
   return (
     <label className="search">
@@ -12,12 +12,21 @@ const Search = () => {
         className="search__input" 
         type="text" 
         placeholder="Search..."
+        defaultValue={defaultVal}
         ref={inputRef}
-        onChange={handleInputChange}
+        onChange={updateInput}
       />
       <i className="search__icon">
         <IoSearch />
       </i>
+      { 
+        defaultVal !== "" && (
+        <button className="search__reset btn" onClick={resetInput}>
+          <span>x</span>
+        </button>
+        )
+      }
+      
     </label>
   );
 };
