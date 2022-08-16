@@ -39,7 +39,7 @@ const HomePage = () => (
       <section className="home-page__section home-page__section--special-offers">
         <h3 className="title-tertiary">Special offers</h3>
         <SpecialOfferList />
-        <Link to="/restaurants" className="btn btn-secondary">More offers</Link>
+        <Link to="/restaurants?filter=special" className="btn btn-secondary">More offers</Link>
       </section>
 
     

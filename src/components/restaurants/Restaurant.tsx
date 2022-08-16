@@ -1,4 +1,6 @@
+import { MdOutlineDeliveryDining } from "react-icons/md";
 import { RestaurantProps } from "../../models/props";
+import StarsRating from "../UI/StarsRating";
 
 const Restaurant = ({ name, id, discount, imgUrl, averageDeliveryTimeInMinutes, rating }: RestaurantProps) => {
   return (
@@ -11,8 +13,17 @@ const Restaurant = ({ name, id, discount, imgUrl, averageDeliveryTimeInMinutes, 
         )}
       </figure>
       <footer className="restaurant__footer">
-        <aside className="restaurant__rating">{rating}</aside>
-        <aside className="restaurant__delivery-time">{averageDeliveryTimeInMinutes}</aside>
+        <aside className="restaurant__rating">
+          <StarsRating rating={rating} />
+        </aside>
+        <aside className="restaurant__delivery">
+          <i className="restaurant__delivery-icon">
+            <MdOutlineDeliveryDining />
+          </i>
+          <span className="restaurant__delivery-time">
+          {averageDeliveryTimeInMinutes} min
+          </span>
+        </aside>
       </footer>
     </article>
   )

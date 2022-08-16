@@ -45,3 +45,7 @@ export interface ToggleBtnProps {
 export interface RestaurantFiltersHeaderProps {
   text: string;
 }
+
+export interface StarsRatingProps {
+  rating: number;
+}

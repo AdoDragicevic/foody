@@ -63,10 +63,22 @@
   }
 
   &__rating {
+    font-size: 2rem;
+    color: $color-secondary;
+  }
 
+  &__delivery {
+    display: flex;
+    align-items: center;
+  }
+
+  &__delivery-icon {
+    font-size: 2rem;
+    transform: translateY(2px);
   }
 
   &__delivery-time {
-
+    margin-left: .5rem;
+    font-size: 1.5rem;
   }
 }
