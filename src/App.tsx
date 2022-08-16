@@ -1,5 +1,5 @@
-import PagesRoutes from "./pages/PagesRoutes";
+import Router from "./routes/Routes";
 
-const App = () => <PagesRoutes />;
+const App = () => <Router />;
 
 export default App;

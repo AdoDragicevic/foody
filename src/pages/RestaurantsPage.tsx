@@ -15,8 +15,6 @@ const RestaurantsPage = () => {
       <main className="restaurants-page__main">
         <RestaurantFilters />
       </main>
-
-      
     </>
   );
 };
