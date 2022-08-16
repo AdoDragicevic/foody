@@ -9,44 +9,16 @@ const useSearchParamsSlice = (key: string): [string | null, (val: string) => voi
 
   const update = (newVal: string) => {
     const prevSearchParams = getSearchParamsObj(searchParams);
-    setSearchParams({
-      ...prevSearchParams,
-      [key]: newVal
-    });
+    if (newVal.trim() === "") {
+      delete prevSearchParams[key];
+      setSearchParams({ ...prevSearchParams });
+    }
+    else {
+      setSearchParams({ ...prevSearchParams, [key]: newVal });
+    }
   };
 
   return [value, update];
 };
-
-/*
-const useUpdateSearchParams = (key: string) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  
-  const updateParamVal = (val: string) => {
-    const currVal = searchParams.get(key);
-    console.log(currVal);
-    const currVals = currVal ? currVal.split("-") : [];
-    const indx = currVals.indexOf(val);
-    if (indx === -1) {
-      currVals.push(val);
-    }
-    else {
-      currVals.splice(indx, 1);
-    }
-    const newVal = currVals.join("-");
-    setSearchParams({
-      ...searchParams,
-      [key]: newVal
-    });
-  };
-
-  useEffect(() => {
-    console.log(searchParams.getAll(key));
-  }, [key, searchParams])
-
-  return updateParamVal;
-};  
-
-*/
 
 export default useSearchParamsSlice;
