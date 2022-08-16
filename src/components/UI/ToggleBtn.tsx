@@ -2,15 +2,16 @@ import useToggle from "../../hooks/useToggle";
 import { ToggleBtnProps } from "../../models/props";
 
 
-const ToggleBtn = ({ text, icon, onClick }: ToggleBtnProps) => {
+const ToggleBtn = ({ text, icon, isActive, onClick }: ToggleBtnProps) => {
 
-  const [isActive, toggleIsActive] = useToggle(false);
+  const [active, toggleActive] = useToggle(isActive);
 
-  const iconCSS = `toggle-btn__icon ${isActive && "toggle-btn__icon--active"}`;
-  const textCSS = `toggle-btn__text ${isActive && "toggle-btn__text--active"}`;
+  const iconCSS = `toggle-btn__icon ${active && "toggle-btn__icon--active"}`;
+  const textCSS = `toggle-btn__text ${active && "toggle-btn__text--active"}`;
 
   const handleClick = () => {
-    toggleIsActive();
+    toggleActive();
+    onClick();
   };
 
   return (

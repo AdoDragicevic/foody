@@ -38,6 +38,7 @@ export interface PictureCardProps {
 export interface ToggleBtnProps {
   text: string;
   icon: ReactNode;
+  isActive: boolean;
   onClick: () => void;
 }
 

@@ -18,34 +18,84 @@ const RestaurantFiltersMain = () => (
     <RestaurantFiltersHeader text="More Filters" />
     <ul className="restaurant-filters__list">
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Meat" icon={<TbMeat />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Meat" 
+          icon={<TbMeat />} 
+          onClick={()=> console.log("btn click")}
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="BBQ" icon={<GiBarbecue />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="BBQ" 
+          icon={<GiBarbecue />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Pizza" icon={<IoPizzaOutline />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Pizza" 
+          icon={<IoPizzaOutline />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Burger" icon={<GiHamburger />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Burger" 
+          icon={<GiHamburger />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Asian" icon={<GiNoodles />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Asian" 
+          icon={<GiNoodles />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Sushi" icon={<GiSushis />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Sushi" 
+          icon={<GiSushis />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Mexican" icon={<FaPepperHot />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Mexican" 
+          icon={<FaPepperHot />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Soup" icon={<TbSoup />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Soup" 
+          icon={<TbSoup />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Desert" icon={<RiCake3Line />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Desert" 
+          icon={<RiCake3Line />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
       <li className="restaurant-filters__list-item">
-        <ToggleBtn text="Drink" icon={<BiDrink />} onClick={()=> console.log("btn click")} />
+        <ToggleBtn 
+          text="Drink" 
+          icon={<BiDrink />} 
+          onClick={()=> console.log("btn click")} 
+          isActive={false} 
+        />
       </li>
     </ul>
   </>

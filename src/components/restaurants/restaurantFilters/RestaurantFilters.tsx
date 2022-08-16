@@ -1,5 +1,5 @@
 import RestaurantFiltersMain from "./RestaurantFiltersMain";
-import RestaurantFiltersSecondary from "./RestaurantFiltersSecondary";
+// import RestaurantFiltersSecondary from "./RestaurantFiltersSecondary";
 
 
 const RestaurantFilters = () => {
@@ -8,7 +8,10 @@ const RestaurantFilters = () => {
     <aside className="restaurant-filters">
       <RestaurantFiltersMain />
       <hr className="horizontal-rule" />
-      <RestaurantFiltersSecondary />
+      {
+        // <RestaurantFiltersSecondary />
+      }
+      
     </aside>
   );
 

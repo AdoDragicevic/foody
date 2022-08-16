@@ -5,6 +5,7 @@ import RestaurantFilters from "../components/restaurants/restaurantFilters/Resta
 
 
 const RestaurantsPage = () => {
+
   return (
     <>
       <Header>
