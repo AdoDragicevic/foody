@@ -19,7 +19,7 @@ const FilterRestaurantList = () => {
 
   const filters = UrlSearchParamsToObj(searchParams);
 
-  let list = [...restaurants];
+  let list = restaurants;
 
   if (filters.search && list.length) {
     list = list.filter(restaurant => {
@@ -31,20 +31,28 @@ const FilterRestaurantList = () => {
 
   if (filters.filter && list.length) {
     const criteria = filters.filter.split("-");
-    if (criteria.includes("special")) {}
-    if (criteria.includes("top")) {}
-    if (criteria.includes("fast")) {}
-    if (criteria.includes("low")) {}
-    if (criteria.includes("open")) {}
+    if (criteria.includes("special")) {
+      list = list.filter(restaurant => !!restaurant.discount);
+    }
+    if (criteria.includes("top")) {
+      list = list.filter(restaurant => restaurant.rating === 5);
+    }
+    if (criteria.includes("fast")) {
+      list = list.filter(restaurant => restaurant.averageDeliveryTimeInMinutes <= 30);
+    }
+    if (criteria.includes("low")) {
+      list = list.filter(restaurant => true);
+    }
+    if (criteria.includes("open")) {
+      list = list.filter(restaurant => true);
+    }
   }
 
   if (filters.food && list.length) {
     const foods = filters.food.split("-");
     list = list.filter(restaurant => {
       for (let food of foods) {
-        if (restaurant.menu[food]) {
-          return true;
-        }
+        if (restaurant.menu[food]) return true;
       }
       return false;
     })
