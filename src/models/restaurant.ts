@@ -44,5 +44,7 @@ export interface Review {
 }
 
 export interface RestaurantFilters {
-  [filterName: string]: string[];
+  criteria?: string;
+  food?: string;
+  search?: string;
 }
