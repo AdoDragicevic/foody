@@ -1,6 +1,5 @@
 import { useSearchParams } from "react-router-dom";
 import { getSearchParamsObj } from "../helpers/url";
-import { PriceRange } from "../models/price";
 import { ObjectWithId } from "../models/util";
 import { Restaurant } from "../models/restaurant";
 import { filterRestaurantsByName, filterRestaurantsByFilters } from "../helpers/filter-restaurants";
@@ -20,8 +19,8 @@ const useFilterRestaurantsBySearchParams = (): [(Restaurant & ObjectWithId)[]] =
     list = filterRestaurantsByName(list, filters.search);    
   }
 
-  if (filters.filter && list.length) {
-    list = filterRestaurantsByFilters(list, filters.filter.split("-"));    
+  if (filters.criteria && list.length) {
+    list = filterRestaurantsByFilters(list, filters.criteria.split("-"));    
   }
 
   if (filters.food && list.length) {

@@ -9,7 +9,6 @@ const RestaurantFilters = () => {
       <RestaurantFiltersMain />
       <hr className="horizontal-rule" />
       <RestaurantFiltersSecondary />
-      
     </aside>
   );
 

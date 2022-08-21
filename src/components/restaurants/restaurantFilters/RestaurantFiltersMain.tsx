@@ -10,7 +10,7 @@ import useToggleSearchParam from "../../../hooks/useToggleSearchParam";
 
 const RestaurantFiltersMain = () => {
   
-  const [filters, toggleFilter] = useToggleSearchParam("filter");  
+  const [filters, toggleFilter] = useToggleSearchParam("criteria");  
    
   return <>
     <RestaurantFiltersHeader text="Filters" />
@@ -19,32 +19,32 @@ const RestaurantFiltersMain = () => {
         <ToggleBtn 
           text="Special Offers" 
           icon={<BsCashCoin />} 
-          onClick={ () => toggleFilter("special") } 
-          isActive={filters.has("special")}
+          onClick={ () => toggleFilter("discount") } 
+          isActive={filters.has("discount")}
         />
       </li>
       <li className="restaurant-filters__list-item">
         <ToggleBtn 
           text="Top Rated" 
           icon={<BsStar />} 
-          onClick={ () => toggleFilter("top") }
-          isActive={filters.has("top")}
+          onClick={ () => toggleFilter("rating") }
+          isActive={filters.has("rating")}
         />
       </li>
       <li className="restaurant-filters__list-item">
         <ToggleBtn 
           text="Fast Delivery" 
           icon={<BsClock />} 
-          onClick={ () => toggleFilter("fast") }
-          isActive={filters.has("fast")}  
+          onClick={ () => toggleFilter("delivery") }
+          isActive={filters.has("delivery")}  
         />
       </li>
       <li className="restaurant-filters__list-item">
         <ToggleBtn 
           text="Low Price" 
           icon={<BsCurrencyDollar />} 
-          onClick={ () => toggleFilter("low") } 
-          isActive={filters.has("low")}
+          onClick={ () => toggleFilter("price") } 
+          isActive={filters.has("price")}
         />
       </li>
       <li className="restaurant-filters__list-item">

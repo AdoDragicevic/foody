@@ -11,17 +11,17 @@ export const filterRestaurantsByName = (restaurants: (Restaurant & ObjectWithId)
 );
 
 export const filterRestaurantsByFilters = (restaurants: (Restaurant & ObjectWithId)[], filters: string[]): (Restaurant & ObjectWithId)[] => {
-  const criteria = new Set( filters );   
-  if (criteria.has("special")) {
+  const criteria = new Set( filters );  
+  if (criteria.has("discount")) {
     restaurants = restaurants.filter(restaurant => !!restaurant.discount);
   }
-  if (criteria.has("top")) {
+  if (criteria.has("rating")) {
     restaurants = restaurants.filter(restaurant => restaurant.rating === 5);
   }
-  if (criteria.has("fast")) {
+  if (criteria.has("delivery")) {
     restaurants = restaurants.filter(restaurant => restaurant.averageDeliveryTimeInMinutes <= 30);
   }
-  if (criteria.has("low")) {
+  if (criteria.has("price")) {
     restaurants = restaurants.filter(restaurant => restaurant.priceRange === PriceRange.$);
   }
   if (criteria.has("open")) {
