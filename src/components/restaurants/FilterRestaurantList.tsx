@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import useFetchRestauratns from "../../hooks/useFetchRestaurants";
+import { PriceRange } from "../../models/price";
 import RestaurantList from "./RestaurantList";
 
 const UrlSearchParamsToObj = (usp: URLSearchParams): Record<string, string> => {
@@ -41,18 +42,18 @@ const FilterRestaurantList = () => {
       list = list.filter(restaurant => restaurant.averageDeliveryTimeInMinutes <= 30);
     }
     if (criteria.includes("low")) {
-      list = list.filter(restaurant => true);
+      list = list.filter(restaurant => restaurant.priceRange === PriceRange.$);
     }
     if (criteria.includes("open")) {
-      list = list.filter(restaurant => true);
+      list = list.filter(restaurant => restaurant.isOpen);
     }
   }
 
   if (filters.food && list.length) {
     const foods = filters.food.split("-");
     list = list.filter(restaurant => {
-      for (let food of foods) {
-        if (restaurant.menu[food]) return true;
+      for (const foodType of restaurant.typeOfFood) {
+        if (foods.includes(foodType)) return true;
       }
       return false;
     })

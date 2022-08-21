@@ -1,17 +1,23 @@
+import { PriceRange } from "./price";
+
+
 export interface Restaurant {
   // in db Restaurant is stored without id, after fetch we add the key under which it's stored as its id
   name: string;
   averageDeliveryTimeInMinutes: number;
   discount: number;
-  contact: RestaurantContact;
   rating: number;
-  imgUrl: string;
+  isOpen: boolean;
+  priceRange: PriceRange;
+  contact: RestaurantContact;
+  typeOfFood: string[];
   menu: {
     [category: string]: MenuItem[];
   };
   reviews: {
     [authorId: string]: Review;
   }
+  imgUrl: string;
 }
 
 export interface RestaurantContact {
