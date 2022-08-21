@@ -36,3 +36,7 @@ export interface Review {
   rating: number;
   date: Date;
 }
+
+export interface RestaurantFilters {
+  [filterName: string]: string[];
+}

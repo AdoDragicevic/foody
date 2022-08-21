@@ -2,9 +2,10 @@ import Header from "../components/layout/Header";
 import Search from "../components/search/Search";
 import UserNav from "../components/navigation/UserNav";
 import RestaurantFilters from "../components/restaurants/restaurantFilters/RestaurantFilters";
+import FilterRestaurantList from "../components/restaurants/FilterRestaurantList";
 
 
-const RestaurantsPage = () => {
+const IndexPage = () => {
 
   return (
     <>
@@ -13,11 +14,12 @@ const RestaurantsPage = () => {
         <UserNav />
       </Header>
 
-      <main className="restaurants-page__main">
+      <main className="index-page__main">
         <RestaurantFilters />
+        <FilterRestaurantList />
       </main>
     </>
   );
 };
 
-export default RestaurantsPage;
+export default IndexPage;

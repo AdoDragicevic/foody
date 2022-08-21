@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import RestaurantsPage from "../pages/RestaurantsPage";
+import IndexPage from "../pages/IndexPage";
 
 
 const Router = () => {
@@ -9,7 +9,7 @@ const Router = () => {
 
       <Route path="/" element={ <HomePage /> } />
       
-      <Route path="/restaurants" element={ <RestaurantsPage />} />
+      <Route path="/restaurants" element={ <IndexPage />} />
       
       <Route path="/restaurants/:id" element={ <p>Restaurant page</p>} />
       
