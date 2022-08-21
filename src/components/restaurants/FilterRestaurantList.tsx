@@ -31,29 +31,29 @@ const FilterRestaurantList = () => {
   }
 
   if (filters.filter && list.length) {
-    const criteria = filters.filter.split("-");
-    if (criteria.includes("special")) {
+    const criteria = new Set( filters.filter.split("-") );
+    if (criteria.has("special")) {
       list = list.filter(restaurant => !!restaurant.discount);
     }
-    if (criteria.includes("top")) {
+    if (criteria.has("top")) {
       list = list.filter(restaurant => restaurant.rating === 5);
     }
-    if (criteria.includes("fast")) {
+    if (criteria.has("fast")) {
       list = list.filter(restaurant => restaurant.averageDeliveryTimeInMinutes <= 30);
     }
-    if (criteria.includes("low")) {
+    if (criteria.has("low")) {
       list = list.filter(restaurant => restaurant.priceRange === PriceRange.$);
     }
-    if (criteria.includes("open")) {
+    if (criteria.has("open")) {
       list = list.filter(restaurant => restaurant.isOpen);
     }
   }
 
   if (filters.food && list.length) {
-    const foods = filters.food.split("-");
+    const foods = new Set( filters.food.split("-") );
     list = list.filter(restaurant => {
       for (const foodType of restaurant.typeOfFood) {
-        if (foods.includes(foodType)) return true;
+        if (foods.has(foodType)) return true;
       }
       return false;
     })
