@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { RequestStatus } from "../models/htttp";
 
 
-const useHttpStates = <T>(requestFn: () => Promise<any>, isLoading = false) => {
+const useHttpStates = <T>(requestFn: () => Promise<Response>, isLoading = false) => {
 
   const initialRequestStatus = isLoading ? RequestStatus.LOADING : RequestStatus.NONE;
   
@@ -21,8 +21,9 @@ const useHttpStates = <T>(requestFn: () => Promise<any>, isLoading = false) => {
       setData(data);
       setRequestStatus(RequestStatus.SUCCESS);
     })
-    .catch( () => {
+    .catch( (err) => {
       setRequestStatus(RequestStatus.ERROR);
+      console.log(err);
     })
   }, [requestFn]);
 

@@ -6,7 +6,7 @@ import { RequestStatus } from "../models/htttp";
 import { ObjectWithId } from "../models/util";
 
 
-const useFetchRestauratns = (isLoading = false): [(Restaurant & ObjectWithId)[], RequestStatus] => {
+const useFetchRestaurants = (isLoading = false): [(Restaurant & ObjectWithId)[], RequestStatus] => {
 
   const { data, requestStatus, sendRequest } = useHttpStates<{ [id: string]: Restaurant }>(fetchRestaurants, isLoading);
 
@@ -21,4 +21,4 @@ const useFetchRestauratns = (isLoading = false): [(Restaurant & ObjectWithId)[],
   return [list, requestStatus];
 };
 
-export default useFetchRestauratns;
+export default useFetchRestaurants;

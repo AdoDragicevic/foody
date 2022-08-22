@@ -1,0 +1,46 @@
+.restaurant-info {
+  padding: 1rem 3.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $color-black;
+  color: $color-gray;
+
+  & > * {
+  
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color: $color-secondary;
+  }
+
+  &__link {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-decoration: underline;
+    transition: all .4s ease;
+    color: $color-gray;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color: $color-secondary;
+
+    span {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+      color: $color-gray;
+    }
+  }
+}

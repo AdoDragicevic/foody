@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
-import { Restaurant } from "../models/restaurant";
+import { MenuItem, Restaurant } from "../models/restaurant";
 import { ObjectWithId } from "./util";
+import { PriceRange } from "./price";
+import { RestaurantContact } from "../models/restaurant";
+
 
 export interface ChildrenProp {
   children: ReactNode;
@@ -49,4 +52,28 @@ export interface RestaurantFiltersHeaderProps {
 
 export interface StarsRatingProps {
   rating: number;
+}
+
+export interface DollarsProps {
+  num: number;
+  max: number;
+}
+
+export interface RestaurantInfoProps {
+  name: string;
+  averageDeliveryTimeInMinutes: number;
+  rating: number;
+  priceRange: PriceRange;
+  contact: RestaurantContact;
+}
+
+export interface RestaurantMenuProps {
+  menu: {
+    [category: string]: MenuItem[];
+  }
+}
+
+export interface RestaurantMenuCategoryProps {
+  name: string;
+  items: MenuItem[];
 }

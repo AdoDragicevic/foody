@@ -1,5 +1,5 @@
 import { StarsRatingProps } from "../../models/props";
-import { getHtmlStars } from "../../helpers/stars";
+import { getHtmlStars } from "../../helpers/html";
 
 
 const StarsRating = ({ rating }: StarsRatingProps) => {

@@ -1,0 +1,14 @@
+.dollars {
+  font-size: 1.6rem;
+  color: $color-gray;
+
+  &__dollar {
+    margin-right: 3px;
+  
+    &--empty {
+      opacity: .4;
+    }
+
+  }
+  
+}
