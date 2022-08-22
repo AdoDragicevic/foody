@@ -13,13 +13,11 @@ import Footer from "../components/layout/Footer";
 import employeeImg from "../imgs/employee.jpg";
 import restaurantImg from "../imgs/restaurant.jpg";
 import teamImg from "../imgs/team.jpg";
+import PageLayout from "../components/layout/PageLayout";
 
 
 const HomePage = () => (
-  <>
-    <Header className="home-page__header">
-      <UserNav />
-    </Header>
+  <PageLayout>
 
     <main>
 
@@ -80,8 +78,7 @@ const HomePage = () => (
 
     </main>
 
-    <Footer />
-  </>
+  </PageLayout>
 );
 
 export default HomePage;

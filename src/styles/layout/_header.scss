@@ -8,6 +8,9 @@
   z-index: 3;
   background-color: $color-primary;
   width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
 
   &__link {
     text-decoration: none;

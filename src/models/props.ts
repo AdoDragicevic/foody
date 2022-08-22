@@ -6,7 +6,8 @@ export interface ChildrenProp {
   children: ReactNode;
 }
 
-export interface HeaderProps extends ChildrenProp {
+export interface HeaderProps {
+  children?: ReactNode;
   className?: string;
 }
 
