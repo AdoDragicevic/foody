@@ -75,3 +75,11 @@ export interface RestaurantMenuCategoryProps {
   name: string;
   items: MenuItem[];
 }
+
+export interface RestaurantMenuItemProps {
+  item: MenuItem;
+}
+
+export interface ModalProps extends ChildrenProp {
+  onClose: () => void;
+}
