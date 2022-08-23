@@ -1,3 +1,13 @@
 .restaurant-menu {
-  min-height: 50vh;
+  min-height: 80vh;
+  padding: 5rem;
+
+  &__category {
+    margin: 2rem 0;
+  }
+
+  &__list {
+    margin: 4rem 0;
+    list-style: none;
+  }
 }

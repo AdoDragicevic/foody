@@ -4,11 +4,19 @@ import Card from "../../UI/Card";
 
 const RestaurantMenuItem = ({ name, price, description, id }: MenuItem) => {
   return (
-    <Card>
-      <h5>{name}</h5>
-      <p>{description}</p>
-      {price}
-    </Card>
+    
+      <article className="restaurant-menu-item">
+        <h5 className="restaurant-menu-item__name">{name}</h5>
+        <p className="restaurant-menu-item__description">{description}</p>
+        <p className="restaurant-menu-item__price">{price.toFixed(2)} EUR</p>
+        <button className="restaurant-menu-item__btn btn">
+          <span>
+            +
+          </span>
+        </button>
+      </article>
+      
+    
   )
 };
 

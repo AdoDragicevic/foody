@@ -11,7 +11,7 @@ const RestaurantMenu = ({ menu }: RestaurantMenuProps) => {
     menuCategories.push(
       <RestaurantMenuCategory name={category} items={menu[category]} />
     );
-  }
+  };
 
   return (
     <article className="restaurant-menu"> 

@@ -11,9 +11,7 @@ export interface Restaurant {
   priceRange: PriceRange;
   contact: RestaurantContact;
   typeOfFood: string[];
-  menu: {
-    [category: string]: MenuItem[];
-  };
+  menu: MenuCategory[];
   reviews: {
     [authorId: string]: Review;
   }
@@ -27,6 +25,11 @@ export interface RestaurantContact {
     street: string;
     streetNumber: string;
   }
+}
+
+export interface MenuCategory {
+  category: string;
+  items: MenuItem[];
 }
 
 export interface MenuItem {

@@ -8,18 +8,15 @@ import RestaurantMenu from "../components/restaurants/restaurantMenu/RestaurantM
 const ShowPage = () => {
 
   const { id } = useParams();
-
   const [restaurant, requestStatus] = useFetchRestaurant(id!);
 
-  if (!restaurant) {
-    return <h2>Restaurant is currently unavailable.</h2>
-  }
+  if (!restaurant) return <h2>Restaurant is currently unavailable.</h2>;
 
   console.log(restaurant);
 
   return (
     <PageLayout>
-      <main>
+      <main className="show-page__main">
         <RestaurantInfo
           name={restaurant.name}
           averageDeliveryTimeInMinutes={restaurant.averageDeliveryTimeInMinutes}
@@ -28,9 +25,6 @@ const ShowPage = () => {
           rating={restaurant.rating}
         />
         <RestaurantMenu menu={restaurant.menu} />
-        {
-          // <MenuNav />
-        }
       </main>
     </PageLayout>
   );
