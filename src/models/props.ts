@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { MenuItem, Restaurant } from "../models/restaurant";
+import { MenuCategory, MenuItem, Restaurant } from "../models/restaurant";
 import { ObjectWithId } from "./util";
 import { PriceRange } from "./price";
 import { RestaurantContact } from "../models/restaurant";
@@ -68,9 +68,7 @@ export interface RestaurantInfoProps {
 }
 
 export interface RestaurantMenuProps {
-  menu: {
-    [category: string]: MenuItem[];
-  }
+  menu: MenuCategory[];
 }
 
 export interface RestaurantMenuCategoryProps {
