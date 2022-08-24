@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RestaurantMenuItemProps } from "../../../models/props";
 import Modal from "../../layout/Modal";
+import RestaurantMenuItemForm from "./RestaurantMenuItemForm";
 
 
 const RestaurantMenuItem = ({ item }: RestaurantMenuItemProps) => {
@@ -14,14 +15,16 @@ const RestaurantMenuItem = ({ item }: RestaurantMenuItemProps) => {
     <>
       {isModalOpen && (
         <Modal onClose={closeModal}>
-          <p>hello world</p>
+          <RestaurantMenuItemForm item={item} />
         </Modal>
       )}
       <article className="restaurant-menu-item" onClick={openModal}>
         <h5 className="restaurant-menu-item__name">{item.name}</h5>
         <p className="restaurant-menu-item__description">{item.description}</p>
-        <p className="restaurant-menu-item__price"> &euro; {item.price.toFixed(2)} </p>
-        <button className="restaurant-menu-item__btn btn"> +  </button>
+        <footer className="restaurant-menu-item__footer">
+          <span className="restaurant-menu-item__price"> &euro; {item.price.toFixed(2)} </span>
+          <button className="restaurant-menu-item__btn btn"> +  </button>
+        </footer>
       </article>
     </>
   )

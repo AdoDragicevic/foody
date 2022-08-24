@@ -2,17 +2,12 @@ import { Link } from "react-router-dom";
 import { IoRestaurantOutline } from "react-icons/io5";
 import { MdDeliveryDining } from "react-icons/md";
 import { RiRecycleLine } from "react-icons/ri";
-
-import Feature from "../components/features/Feature";
-import Header from "../components/layout/Header";
-import UserNav from "../components/navigation/UserNav";
-import SpecialOfferList from "../components/restaurants/SpecialOfferList";
-import PictureCard from "../components/UI/PictureCard";
-import Footer from "../components/layout/Footer";
-
 import employeeImg from "../imgs/employee.jpg";
 import restaurantImg from "../imgs/restaurant.jpg";
 import teamImg from "../imgs/team.jpg";
+import Feature from "../components/features/Feature";
+import SpecialOfferList from "../components/restaurants/SpecialOfferList";
+import PictureCard from "../components/UI/PictureCard";
 import PageLayout from "../components/layout/PageLayout";
 
 
@@ -37,7 +32,7 @@ const HomePage = () => (
       <section className="home-page__section home-page__section--special-offers">
         <h3 className="title-tertiary">Special offers</h3>
         <SpecialOfferList />
-        <Link to="/restaurants?filter=special" className="btn btn-secondary">More offers</Link>
+        <Link to="/restaurants?criteria=discount" className="btn btn-secondary">More offers</Link>
       </section>
 
     

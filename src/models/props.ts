@@ -80,6 +80,8 @@ export interface RestaurantMenuItemProps {
   item: MenuItem;
 }
 
+export interface RestaruantMenuItemOptionsProps extends RestaurantMenuItemProps {}
+
 export interface ModalProps extends ChildrenProp {
   onClose: () => void;
 }

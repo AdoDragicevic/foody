@@ -1,6 +1,7 @@
 .restaurant-menu {
   min-height: 80vh;
   padding: 5rem;
+  flex-grow: 1;
 
   &__category {
     margin: 2rem 0;
@@ -9,5 +10,12 @@
   &__list {
     margin: 4rem 0;
     list-style: none;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  }
+
+  &__list-item {
+
   }
 }
