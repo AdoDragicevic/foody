@@ -12,7 +12,7 @@ const RestaurantMenuCategory = ({ name, items }: RestaurantMenuCategoryProps) =>
   
   return (
     <section id="name" className="restaurant-menu__category">
-      <h3 className="title-tertiary"> {name} </h3>
+      <h3 className="h-thin"> {name} </h3>
       <hr className="horizontal-rule" />
       <ul className="restaurant-menu__list">
         {menuItems}

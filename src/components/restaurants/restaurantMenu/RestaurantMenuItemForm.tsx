@@ -5,7 +5,7 @@ const RestaurantMenuItemForm = ({ item }: RestaruantMenuItemOptionsProps) => {
   return (
     <form className="restaurant-menu-item-form">
       
-      <h2 className="restaurant-menu-item-form__title"> 
+      <h2 className="h-tertiary"> 
         {item.name} 
       </h2>
       

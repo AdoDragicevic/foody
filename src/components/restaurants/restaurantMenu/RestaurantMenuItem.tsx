@@ -19,7 +19,7 @@ const RestaurantMenuItem = ({ item }: RestaurantMenuItemProps) => {
         </Modal>
       )}
       <article className="restaurant-menu-item" onClick={openModal}>
-        <h5 className="restaurant-menu-item__name">{item.name}</h5>
+        <h5 className="h-tertiary">{item.name}</h5>
         <p className="restaurant-menu-item__description">{item.description}</p>
         <footer className="restaurant-menu-item__footer">
           <span className="restaurant-menu-item__price"> &euro; {item.price.toFixed(2)} </span>

@@ -18,8 +18,8 @@ const HomePage = () => (
 
       <section className="home-page__section home-page__section--welcome">
         <div className="home-page__welcome">
-          <h1 className="title-primary mt-lg mb-xs">Welcome to Foody!</h1>
-          <h3 className="title-tertiary">Best restaurants at your dispsal</h3>
+          <h1 className="h-primary mt-lg mb-xs">Welcome to Foody!</h1>
+          <h3 className="h-thin">Best restaurants at your dispsal</h3>
         </div>
         <Link to="/restaurants" className="home-page__btn btn btn-main">Find all restaurants</Link>
       </section>
@@ -30,14 +30,14 @@ const HomePage = () => (
 
 
       <section className="home-page__section home-page__section--special-offers">
-        <h3 className="title-tertiary">Special offers</h3>
+        <h3 className="h-thin">Special offers</h3>
         <SpecialOfferList />
         <Link to="/restaurants?criteria=discount" className="btn btn-secondary">More offers</Link>
       </section>
 
     
       <section className="home-page__section home-page__section--why-foody">
-        <h3 className="title-tertiary">Why Foody?</h3>
+        <h3 className="h-thin">Why Foody?</h3>
         <ul className="home-page__list">
           
           <li className="home-page__list-item">
@@ -57,7 +57,7 @@ const HomePage = () => (
 
 
       <section className="home-page__section">
-        <h2 className="title-tertiary">Work with us!</h2>
+        <h2 className="h-thin">Work with us!</h2>
         <ul className="home-page__list">
           <li className="home-page__list-item home-page__list-item--picture-card">
             <PictureCard title="Earn extra money as currier" leadsToUrl="#" img={employeeImg}  />

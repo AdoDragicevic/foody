@@ -9,7 +9,7 @@ import { RestaurantInfoProps } from "../../models/props";
 
 const RestaurantInfo = ({ name, averageDeliveryTimeInMinutes, rating, priceRange, contact }: RestaurantInfoProps) => (
   <article className="restaurant-info">
-    <h2 className="title-secondary">{name}</h2>
+    <h2 className="h-secondary">{name}</h2>
     <div className="restaurant-info__rating">
       <StarsRating rating={rating} />
       <Link className="restaurant-info__link" to="/reviews">All reviews</Link>
