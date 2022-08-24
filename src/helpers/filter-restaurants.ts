@@ -11,7 +11,7 @@ const filterRestaurantsByName = (restaurants: (Restaurant & ObjectWithId)[], nam
   })
 );
 
-const filterRestaurantsByFilters = (restaurants: (Restaurant & ObjectWithId)[], filters: string[]): (Restaurant & ObjectWithId)[] => {
+const filterRestaurantsByCriteria = (restaurants: (Restaurant & ObjectWithId)[], filters: string[]): (Restaurant & ObjectWithId)[] => {
   const criteria = new Set( filters );  
   let list = restaurants;
   if (criteria.has("discount")) {
@@ -49,7 +49,7 @@ export const getFilteredRestaurants = (restaurants: (Restaurant & ObjectWithId)[
     list = filterRestaurantsByName(list, filters.search); 
   }
   if (filters.criteria) {
-    list = filterRestaurantsByFilters(list, filters.criteria.split("-"));    
+    list = filterRestaurantsByCriteria(list, filters.criteria.split("-"));    
   }
   if (filters.food) {
     list = filterRestaurantsByFood(list, filters.food.split("-"));

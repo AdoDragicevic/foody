@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { MenuCategory, MenuItem, Restaurant } from "../models/restaurant";
+import { ChangeEvent, FormEvent, MouseEvent, ReactNode } from "react";
+import { ExtraOrder, MenuCategory, MenuItem, Restaurant } from "../models/restaurant";
 import { ObjectWithId } from "./util";
 import { PriceRange } from "./price";
 import { RestaurantContact } from "../models/restaurant";
@@ -72,16 +72,36 @@ export interface RestaurantMenuProps {
 }
 
 export interface RestaurantMenuCategoryProps {
-  name: string;
+  category: string;
   items: MenuItem[];
+  extras: ExtraOrder[];
 }
 
 export interface RestaurantMenuItemProps {
   item: MenuItem;
+  extras: ExtraOrder[];
 }
 
 export interface RestaruantMenuItemOptionsProps extends RestaurantMenuItemProps {}
 
 export interface ModalProps extends ChildrenProp {
   onClose: () => void;
+}
+
+export interface RestaurantMenuFormBtnsProps {
+  onDecrement: () => void;
+  onIncrement: () => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  quantity: number;
+  price: string;
+}
+
+export interface RestaurantMenuFormOptionsProps {
+  options: string[];
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface RestaurantMenuFormExtrasProps {
+  extras: ExtraOrder[];
+  onChange: (extra: ExtraOrder) => void;
 }

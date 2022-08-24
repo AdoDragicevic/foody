@@ -9,6 +9,7 @@ import { addRestaurantsToDb } from "./backend/setupDb";
 addRestaurantsToDb();
 */
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

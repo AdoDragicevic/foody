@@ -30,6 +30,13 @@ export interface RestaurantContact {
 export interface MenuCategory {
   category: string;
   items: MenuItem[];
+  extras: ExtraOrder[];
+}
+
+export interface ExtraOrder {
+  id: string;
+  name: string;
+  price: number;
 }
 
 export interface MenuItem {
@@ -37,6 +44,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  options: string[] | null;
 }
 
 export interface Review {
