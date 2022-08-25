@@ -1,8 +1,9 @@
-import { ChangeEvent, FormEvent, MouseEvent, ReactNode } from "react";
+import { ChangeEvent, FormEvent, ReactNode } from "react";
 import { ExtraOrder, MenuCategory, MenuItem, Restaurant } from "../models/restaurant";
 import { ObjectWithId } from "./util";
 import { PriceRange } from "./price";
 import { RestaurantContact } from "../models/restaurant";
+import { CartActionRemoveItem, CartItem, CartItems } from "./cart";
 
 
 export interface ChildrenProp {
@@ -108,4 +109,14 @@ export interface RestaurantMenuFormOptionsProps {
 export interface RestaurantMenuFormExtrasProps {
   extras: ExtraOrder[];
   onChange: (extra: ExtraOrder) => void;
+}
+
+export interface CartItemListProps {
+  items: CartItems;
+  onRemoveItem: (itemId: string) => void;
+}
+
+export interface CartItemProps {
+  item: CartItem;
+  onRemove: (itemId: string) => void;
 }

@@ -32,7 +32,7 @@ interface CartActionAddItem {
   restaurantId: string;
 } 
 
-interface CartActionRemoveItem {
+export interface CartActionRemoveItem {
   type: "remove_item", 
   itemId: string
 }

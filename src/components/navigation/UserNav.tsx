@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaListUl } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
-import CartLink from "../cart/cartLink";
+import CartLink from "../cart/CartLink";
 
 
 const UserNav = () => (

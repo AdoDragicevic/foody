@@ -1,0 +1,49 @@
+.cart-item {
+  width: 90vw;
+  max-width: 60rem;
+  border-bottom: 1px solid $color-gray;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  position: relative;
+  font-size: 1.5rem;
+
+  &__list {
+    list-style: none;
+    margin: 4rem 0;
+  }
+
+  &__description {
+
+  }
+
+  &__option {
+
+  }
+
+  &__extras {
+
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    opacity: .5;
+    font-weight: 800;
+    transition: all .4s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
+}
