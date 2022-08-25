@@ -17,5 +17,6 @@ export const addItemToCart = (prevState: Cart, newItem: CartItem, restaurantId: 
 export const removeItemFromCart = (prevState: Cart, itemId: string) => {
   const items = { ...prevState.items };
   delete items[itemId];
-  return { ...prevState, items };
+  const isCartEmpty = Object.keys(items).length === 0;
+  return isCartEmpty ? new Cart( "", {} ) : { ...prevState, items };
 };

@@ -13,8 +13,13 @@ const CartItem = ({ item, onRemove }: CartItemProps) => (
       </p>
     )}
     <p className="cart-item__extras">
-      Extra: {item.selectedExtras.map(extra => extra.name).join(",")}
+      Extra: {item.selectedExtras.map(extra => extra.name).join(", ")}
     </p>
+    <p> x {item.quantity} </p>
+    <div className="cart-item__price">
+      <p> &euro; {item.menuItem.price} </p>
+      <p> Total: {item.menuItem.price * item.quantity} </p>
+    </div>
     <button 
       className="cart-item__btn btn"
       onClick={ () => onRemove(item.id) }

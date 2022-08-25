@@ -30,7 +30,7 @@ const CartPage = () => {
           <h2 className="cart-page__price">
             &euro; {totalPrice.toFixed(2)}
           </h2>
-          <Link to={`/restaurants`} className="cart-page__btn btn btn-secondary">
+          <Link to={`/restaurants${restaurantId ? ("/" + restaurantId) : ""  }`} className="cart-page__btn btn btn-secondary">
             Back to Menu
           </Link>
           <button className="cart-page__btn btn btn-main" disabled={totalPrice === 0}>
