@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaListUl } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
+import CartLink from "../cart/cartLink";
 
 
 const UserNav = () => (
@@ -14,10 +14,7 @@ const UserNav = () => (
       <FaListUl />
       <span className="user-nav__tag">Orders</span>
     </Link>
-    <Link to="/cart" className="user-nav__link btn">
-      <FaShoppingCart />
-      <span className="user-nav__tag">Cart</span>
-    </Link>
+    <CartLink />
   </nav>
 );
 
