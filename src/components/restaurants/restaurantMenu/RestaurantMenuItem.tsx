@@ -15,7 +15,7 @@ const RestaurantMenuItem = ({ item , extras }: RestaurantMenuItemProps) => {
     <>
       {isModalOpen && (
         <Modal onClose={closeModal}>
-          <RestaurantMenuForm item={item} extras={extras} />
+          <RestaurantMenuForm item={item} extras={extras} onClose={closeModal} />
         </Modal>
       )}
       <article className="restaurant-menu-item" onClick={openModal}>

@@ -82,6 +82,10 @@ export interface RestaurantMenuItemProps {
   extras: ExtraOrder[];
 }
 
+export interface RestaurantMenuFormProps extends RestaurantMenuItemProps {
+  onClose: () => void;
+}
+
 export interface RestaruantMenuItemOptionsProps extends RestaurantMenuItemProps {}
 
 export interface ModalProps extends ChildrenProp {

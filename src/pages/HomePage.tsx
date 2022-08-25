@@ -5,7 +5,7 @@ import { RiRecycleLine } from "react-icons/ri";
 import employeeImg from "../imgs/employee.jpg";
 import restaurantImg from "../imgs/restaurant.jpg";
 import teamImg from "../imgs/team.jpg";
-import Feature from "../components/features/Feature";
+import Feature from "../components/UI/Feature";
 import SpecialOfferList from "../components/restaurants/SpecialOfferList";
 import PictureCard from "../components/UI/PictureCard";
 import PageLayout from "../components/layout/PageLayout";

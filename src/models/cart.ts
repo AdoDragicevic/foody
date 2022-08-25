@@ -1,10 +1,19 @@
-export interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  extras: string[];
-  options: string[];
+import { ExtraOrder, MenuItem } from "./restaurant";
+import { getCartItemId } from "../helpers/cart";
+
+
+export class CartItem {
+
+  public id: string;
+
+  constructor(
+    public menuItem: MenuItem, 
+    public selectedExtras: ExtraOrder[], 
+    public selectedOption: string, 
+    public quantity: number
+    ) {
+      this.id = getCartItemId(menuItem.id, selectedExtras, selectedOption);
+    }
 }
 
 export interface CartItems {
@@ -18,9 +27,9 @@ export class Cart {
 export type CartAction = CartActionAddItem | CartActionRemoveItem | CartActionRemoveAll;
 
 interface CartActionAddItem {
-  type: "add_item", 
-  restaurantId: string, 
-  item: CartItem
+  type: "add_item";
+  cartItem: CartItem;
+  restaurantId: string;
 } 
 
 interface CartActionRemoveItem {
