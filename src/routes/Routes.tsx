@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import AuthPage from "../pages/AuthPage";
 import CartPage from "../pages/CartPage";
 import HomePage from "../pages/HomePage";
 import IndexPage from "../pages/IndexPage";
@@ -25,7 +26,7 @@ const Router = () => {
       
       <Route path="/cart" element={ <CartPage /> } />
       
-      <Route path="/auth" element={ <p>Auth page</p>} />
+      <Route path="/auth" element={ <AuthPage /> } />
 
       <Route path="/page-not-found" element={<p>Page not found</p>} />
 

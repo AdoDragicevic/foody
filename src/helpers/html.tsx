@@ -17,7 +17,7 @@ export const getHtmlDollars = (numOfDollars: number, numOfFilled: number, fillCl
 
   for (let i = 1; i <= numOfDollars; i++) {
     const css = `${i <= numOfFilled ? fillClassName : emptyClassName}`;
-    dollars.push( <span className={css}>$</span> );
+    dollars.push( <span key={i} className={css}>$</span> );
   }
 
   return dollars;

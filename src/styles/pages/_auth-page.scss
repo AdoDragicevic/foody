@@ -1,0 +1,15 @@
+.auth-page {
+
+  &__main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    margin-top: 5rem;
+    width: 90%;
+    max-width: 40rem;
+  }
+
+}

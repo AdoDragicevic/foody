@@ -1,0 +1,39 @@
+.form {
+
+  &__fieldset {
+    padding: 1rem;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+  }
+
+  &__input {
+    height: 4rem;
+    font-family: inherit;
+    padding: .5rem 1rem;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 2px solid $color-black;
+    outline: none;
+    position: relative;
+
+    &:invalid:not(:focus) {
+      border-bottom: 2px solid orangered;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin: 2rem auto 4rem auto;
+    width: 80%;
+  }
+
+}

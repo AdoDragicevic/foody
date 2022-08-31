@@ -1,17 +1,17 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import useHttpStates from "../hooks/useHttpStates";
-import { getFetchRestaurant } from "../helpers/http";
+import { fetchRestaurant } from "../helpers/http/http-restaurants";
 import { Restaurant } from "../models/restaurant";
 import { RequestStatus } from "../models/htttp";
 
 
 const useFetchRestaurant = (restaurantId: string): [Restaurant | null, RequestStatus] => {
 
-  const fetchRestaurant = useCallback( () => (getFetchRestaurant(restaurantId))(), [restaurantId]);
+  const { data, requestStatus, sendRequest } = useHttpStates<Restaurant>(true);
 
-  const { data, requestStatus, sendRequest } = useHttpStates<Restaurant>(fetchRestaurant, true);
-
-  useEffect( () => sendRequest(), [sendRequest]);
+  useEffect( () => {
+    sendRequest(fetchRestaurant.bind(null, restaurantId))
+  }, [restaurantId, sendRequest]);
 
   return [data, requestStatus];
 };
