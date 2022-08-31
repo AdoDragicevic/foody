@@ -2,10 +2,8 @@ import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import { AuthCtx } from "../contexts/auth-context";
-import { fetchAuth } from "../helpers/http/http-auth";
-import useHttpStates from "../hooks/useHttpStates";
 import useToggle from "../hooks/useToggle";
-import { AuthResponseData, FetchAuthType, RequestStatus } from "../models/htttp";
+import { RequestStatus } from "../models/htttp";
 
 
 const useControlledInput = (initVal = ""): [string, (e: ChangeEvent<HTMLInputElement>) => void] => {

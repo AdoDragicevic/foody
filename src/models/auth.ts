@@ -1,5 +1,13 @@
-import { Dispatch } from "react";
-import { AuthResponseData } from "./htttp";
+import { AuthResponseData, RequestStatus } from "./htttp";
 
+export interface AuthContextDispatch {
+  logIn: (email: string, password: string) => void;
+  logOut: () => void;
+  signUp: (email: string, password: string) => void;
+}
 
-export type AuthCtxProviderValue = [AuthResponseData | null, Dispatch<AuthResponseData | null>];
+export interface AuthContext {
+  auth: AuthResponseData | null;
+  requestStatus: RequestStatus;
+  dispatch: AuthContextDispatch;
+}

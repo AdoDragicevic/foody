@@ -13,8 +13,7 @@ const useHttpStates = <T>(isLoading = false) => {
     setRequestStatus(RequestStatus.LOADING);
     requestFn()
     .then( (res: any) => {
-      console.log(res);
-      if (!res.ok) throw new Error("this is new errror!");
+      if (!res.ok) throw new Error(res);
       return res.json();
     })
     .then( (data: T) => {
@@ -22,9 +21,8 @@ const useHttpStates = <T>(isLoading = false) => {
       setRequestStatus(RequestStatus.SUCCESS);
       console.log(data);
     })
-    .catch( (err) => {
+    .catch( () => {
       setRequestStatus(RequestStatus.ERROR);
-      console.log("!!!!", err);
     })
   }, []);
 

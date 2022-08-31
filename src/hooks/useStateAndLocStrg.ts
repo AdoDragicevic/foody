@@ -10,7 +10,6 @@ const useStateAndLocStrg = <T>(key: string, initState: T): [T, Dispatch<T>] => {
 
   useEffect( () => {
     localStorage.setItem(key, JSON.stringify(val));
-    console.log(val);
   }, [val, key] );
 
   return [val, setVal];
