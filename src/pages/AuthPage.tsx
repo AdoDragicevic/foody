@@ -1,9 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
+import { AuthCtx } from "../contexts/auth-context";
 import { fetchAuth } from "../helpers/http/http-auth";
 import useHttpStates from "../hooks/useHttpStates";
 import useToggle from "../hooks/useToggle";
-import { AuthResponseData, FetchAuthType } from "../models/htttp";
+import { AuthResponseData, FetchAuthType, RequestStatus } from "../models/htttp";
 
 
 const useControlledInput = (initVal = ""): [string, (e: ChangeEvent<HTMLInputElement>) => void] => {
@@ -17,25 +19,31 @@ const useControlledInput = (initVal = ""): [string, (e: ChangeEvent<HTMLInputEle
 
 const AuthPage = () => {
 
+  const navigate = useNavigate();
+
   const [isLogIn, toggleIsLogIn] = useToggle();
 
   const [email, updateEmail] = useControlledInput("");
   const [password, updatePassword] = useControlledInput("");
   const [confirmPassword, updateConfirmPassword] = useControlledInput("");
 
-  const { sendRequest, requestStatus, data } = useHttpStates<AuthResponseData>(false);
+  const { dispatch, requestStatus } = useContext(AuthCtx);
 
-
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const authType = isLogIn ? FetchAuthType.LOG_IN : FetchAuthType.SIGN_UP;
-    const signUp = fetchAuth.bind(null, email, password, authType);
-    sendRequest(signUp);
+    const { logIn, signUp } = dispatch;
+    isLogIn ? logIn(email, password) : signUp(email, password);
   };
+
+  useEffect( () => {
+    if (requestStatus === RequestStatus.SUCCESS) {
+      navigate("/cart");
+    }
+  }, [requestStatus, navigate] );
+
 
   return (
     <PageLayout>
-      <h1>{requestStatus}</h1>
       <main className="auth-page__main">
         <form className="auth-page__form form" onSubmit={handleSubmit}>
           <h2 className="h-secondary txt-center mb-md"> {isLogIn ? "LogIn" : "SignUp"} </h2>
