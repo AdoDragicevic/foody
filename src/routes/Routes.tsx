@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { AuthCtx } from "../contexts/auth-context";
 import AuthPage from "../pages/AuthPage";
 import CartPage from "../pages/CartPage";
 import HomePage from "../pages/HomePage";
@@ -7,6 +9,9 @@ import ShowPage from "../pages/ShowPage";
 
 
 const Router = () => {
+  
+  const { auth } = useContext(AuthCtx);
+  
   return (
     <Routes>
 
@@ -18,15 +23,15 @@ const Router = () => {
       
       <Route path="/restaurants/:id/reviews" element={ <p>Restaurant reviews page</p>} />
       
-      <Route path="/profile" element={ <p>Profile page</p>} />
+      <Route path="/profile" element={ auth ? <p>Profile page!</p> : <AuthPage /> } />
       
       <Route path="/profile/new" element={ <p>New profile page</p>} />
       
-      <Route path="/orders" element={ <p>Orders page</p>} />
+      <Route path="/orders" element={ auth ? <p>Orders page!</p> : <AuthPage /> } />
       
       <Route path="/cart" element={ <CartPage /> } />
       
-      <Route path="/auth" element={ <AuthPage /> } />
+      <Route path="/auth" element={ auth ? <p>You are logged in!</p> : <AuthPage /> } />
 
       <Route path="/page-not-found" element={<p>Page not found</p>} />
 
