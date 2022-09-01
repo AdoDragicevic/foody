@@ -4,13 +4,7 @@ import { User } from "../../models/user";
 import { fetchReplaceProfile } from "../../helpers/http/http-profile";
 import { RequestStatus } from "../../models/htttp";
 import { useNavigate } from "react-router-dom";
-
-
-interface ProfileFormProps {
-  userId: string;
-  userEmail: string;
-  user: User | null;
-}
+import { ProfileFormProps } from "../../models/props";
 
 
 const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
@@ -18,6 +12,12 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
   const navigate = useNavigate();
   
   const { sendRequest, requestStatus } = useHttpStates(false);
+
+  useEffect( () => {
+    if (requestStatus === RequestStatus.SUCCESS) {
+      navigate("/profile");
+    }
+  }, [requestStatus, navigate]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -44,15 +44,9 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
     const fetch = fetchReplaceProfile.bind(null, newProfile);
     sendRequest(fetch);
   };
-
-  useEffect( () => {
-    if (requestStatus === RequestStatus.SUCCESS) {
-      navigate("/profile");
-    }
-  }, [requestStatus, navigate]);
   
   return (
-    <form className="profile__form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
 
       <h2 className="h-thin txt-center mb-xl">
         {user ? "Edit" : "Create"} Profile
@@ -60,28 +54,61 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
 
       <fieldset className="fieldset">
         <legend>Contact</legend>
-        <label>
-          Name
-          <input type="text" />
-        </label>
-        <label>
-          Phone
-          <input type="tel" />
-        </label>
+
+        <label className="label" htmlFor="name">Name</label>
+        <input className="input" id="name" type="text" />
+
+        <label className="label" htmlFor="phone">Phone</label>
+        <input className="input" id="phone" type="tel" />
       </fieldset>
 
       <fieldset className="fieldset">
         <legend>Delivery Address</legend>
-        
+
+        <label className="label" htmlFor="street-name">Street Name</label>
+        <input className="input" id="street-name" type="text" />
+
+        <label className="label" htmlFor="street-num">Street Number</label>
+        <input className="input" id="street-num" type="text" />
+
+        <label className="label" htmlFor="postal-code">Postal Code</label>
+        <input className="input" id="postal-code" type="number" />
+
+        <label className="label" htmlFor="floor">Floor</label>
+        <input className="input" id="floor" type="number" defaultValue={0} />
+
+        <label className="label" htmlFor="comment">Comment</label>
+        <input className="input" id="comment" type="fieldset" />
       </fieldset>
 
-      <button
-        type="submit" 
-        onClick={handleSubmit}
-        disabled={requestStatus === RequestStatus.LOADING}
-      >
-        Save
-      </button>
+      <fieldset className="fieldset">
+        <legend>Payment Method</legend>
+
+        <div className="profile__form-btns">
+          <input type="radio" name="payment-method" />
+          <label htmlFor="cash">Cash</label>
+          
+          <input type="radio" name="payment-method" />
+          <label htmlFor="card">Card</label>
+        </div>
+        
+        <div className="profile__form-card">
+
+        </div>
+
+      </fieldset>
+
+      <footer>
+        <button
+          className="btn btn-secondary"
+          type="submit" 
+          onClick={handleSubmit}
+          disabled={requestStatus === RequestStatus.LOADING}
+        >
+          Save
+        </button>
+      </footer>
+
     </form>
   );
 };

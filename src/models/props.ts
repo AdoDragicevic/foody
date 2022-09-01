@@ -3,8 +3,8 @@ import { ExtraOrder, MenuCategory, MenuItem, Restaurant } from "../models/restau
 import { ObjectWithId } from "./util";
 import { PriceRange } from "./price";
 import { RestaurantContact } from "../models/restaurant";
-import { CartActionRemoveItem, CartItem, CartItems } from "./cart";
-import { UserContact } from "./user";
+import { CartItem, CartItems } from "./cart";
+import { User } from "../models/user";
 
 
 export interface ChildrenProp {
@@ -120,4 +120,10 @@ export interface CartItemListProps {
 export interface CartItemProps {
   item: CartItem;
   onRemove: (itemId: string) => void;
+}
+
+export interface ProfileFormProps {
+  userId: string;
+  userEmail: string;
+  user: User | null;
 }

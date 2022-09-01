@@ -43,23 +43,23 @@ const AuthPage = () => {
   return (
     <PageLayout>
       <main className="auth-page__main">
-        <form className="auth-page__form form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <h2 className="h-secondary txt-center mb-md"> {isLogIn ? "LogIn" : "SignUp"} </h2>
-          <fieldset className="form__fieldset">
-            <label className="form__label" htmlFor="email">Email</label>
+          <fieldset className="fieldset">
+            <label className="label" htmlFor="email">Email</label>
             <input
-              id="email" 
-              className="form__input"
+              id="email"
+              className="input"
               type="email" 
               value={email} 
               onChange={updateEmail} 
             />
           </fieldset>
-          <fieldset className="form__fieldset">
-            <label className="form__label" htmlFor="password">Password</label>
+          <fieldset className="fieldset">
+            <label className="label" htmlFor="password">Password</label>
             <input 
               id="password" 
-              className="form__input" 
+              className="input" 
               type="password"
               value={password} 
               onChange={updatePassword} 
@@ -67,11 +67,11 @@ const AuthPage = () => {
           </fieldset>
           {
             !isLogIn && (
-              <fieldset className="form__fieldset">
-                <label className="form__label" htmlFor="confirm-password">Confirm Password</label>
+              <fieldset className="fieldset">
+                <label className="label" htmlFor="confirm-password">Confirm Password</label>
                 <input 
                   id="confirm-password" 
-                  className="form__input" 
+                  className="input" 
                   type="password"
                   value={confirmPassword} 
                   onChange={updateConfirmPassword} 
@@ -79,7 +79,7 @@ const AuthPage = () => {
               </fieldset>
             )
           }
-          <fieldset className="form__fieldset form__btns">
+          <footer className="form__btns">
             <button className="form__btn btn btn-main" type="submit">Submit</button>
             <button 
               className="btn btn-secondary mt-lg txt" 
@@ -88,7 +88,7 @@ const AuthPage = () => {
               > 
                 {isLogIn ? "Create account" : "LogIn with existing account"}
             </button>
-          </fieldset>
+          </footer>
         </form>
       </main>
     </PageLayout>
