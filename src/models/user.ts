@@ -1,11 +1,15 @@
-import { MenuItem } from "./restaurant";
+import { CartItems } from "./cart";
 
 
 export interface User {
   id: string;
   name: string;
   contact: UserContact;
-  orders: Order[];
+  orders: Orders | null;
+}
+
+export interface Orders {
+  [orderId: string]: Order;
 }
 
 export interface UserContact {
@@ -20,10 +24,12 @@ export interface UserContact {
   }
 }
 
-export interface Order {
-  restaurantId: string;
-  restaurantName: string;
-  date: Date;
-  items: MenuItem[];
-  isCompleted: true;
+export class Order {
+
+  public date = new Date();
+
+  constructor(
+    public restaurantId: string, 
+    public items: CartItems
+  ) {};
 }

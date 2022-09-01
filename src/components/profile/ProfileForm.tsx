@@ -24,10 +24,11 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
 
     const id = userId;
     const email = userEmail;
+    const orders = user?.orders || null;
 
     const newProfile: User = {
       id,
-      name: "Marko",
+      name: "Ado",
       contact: {
         email,
         phone: "091 200 2071",
@@ -39,7 +40,7 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
           comments: "No comment",
         }
       },
-      orders: user ? user.orders : []
+      orders
     };
     const fetch = fetchReplaceProfile.bind(null, newProfile);
     sendRequest(fetch);
