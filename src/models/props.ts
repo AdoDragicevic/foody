@@ -4,6 +4,7 @@ import { ObjectWithId } from "./util";
 import { PriceRange } from "./price";
 import { RestaurantContact } from "../models/restaurant";
 import { CartActionRemoveItem, CartItem, CartItems } from "./cart";
+import { UserContact } from "./user";
 
 
 export interface ChildrenProp {

@@ -1,0 +1,18 @@
+.profile-page {
+
+  &__nav {
+    display: flex;
+    height: 6rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 4vw;
+  }
+
+  &__main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 6rem 1rem;
+  }
+
+}

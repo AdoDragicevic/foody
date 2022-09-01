@@ -35,7 +35,7 @@ const AuthPage = () => {
 
   useEffect( () => {
     if (requestStatus === RequestStatus.SUCCESS) {
-      navigate("/cart");
+      navigate("/restaurants");
     }
   }, [requestStatus, navigate] );
 

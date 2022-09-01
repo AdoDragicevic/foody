@@ -2,6 +2,7 @@ import { MenuItem } from "./restaurant";
 
 
 export interface User {
+  id: string;
   name: string;
   contact: UserContact;
   orders: Order[];
@@ -15,7 +16,7 @@ export interface UserContact {
     streetNumber: string;
     postalCode: number;
     floor: number;
-    comments?: string;
+    comments: string;
   }
 }
 

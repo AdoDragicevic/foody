@@ -1,5 +1,6 @@
 import { AuthResponseData, RequestStatus } from "./htttp";
 
+
 export interface AuthContextDispatch {
   logIn: (email: string, password: string) => void;
   logOut: () => void;

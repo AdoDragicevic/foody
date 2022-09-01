@@ -5,6 +5,8 @@ import AuthPage from "../pages/AuthPage";
 import CartPage from "../pages/CartPage";
 import HomePage from "../pages/HomePage";
 import IndexPage from "../pages/IndexPage";
+import ProfilePage from "../pages/ProfilePage";
+import ProfileEditPage from "../pages/ProfileEditPage";
 import ShowPage from "../pages/ShowPage";
 
 
@@ -23,9 +25,9 @@ const Router = () => {
       
       <Route path="/restaurants/:id/reviews" element={ <p>Restaurant reviews page</p>} />
       
-      <Route path="/profile" element={ auth ? <p>Profile page!</p> : <AuthPage /> } />
+      <Route path="/profile" element={ auth ? <ProfilePage /> : <AuthPage /> } />
       
-      <Route path="/profile/new" element={ <p>New profile page</p>} />
+      <Route path="/profile/edit" element={ auth ? <ProfileEditPage /> : <AuthPage /> } />
       
       <Route path="/orders" element={ auth ? <p>Orders page!</p> : <AuthPage /> } />
       
