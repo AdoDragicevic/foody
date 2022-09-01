@@ -1,8 +1,8 @@
-import PageLayout from "../components/layout/PageLayout";
-import Profile from "../components/profile/Profile";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { RequestStatus } from "../models/htttp";
 import useFetchProfile from "../hooks/profile/useFetchProfile";
+import Profile from "../components/profile/Profile";
+import PageLayoutSecondary from "../components/layout/PageLayoutSecondary";
 
 
 const ProfilePage = () => {
@@ -10,7 +10,7 @@ const ProfilePage = () => {
   const [requestStatus, , user] = useFetchProfile();
 
   return (
-    <PageLayout>
+    <PageLayoutSecondary>
       <main className="profile-page__main">
         
         {
@@ -34,7 +34,7 @@ const ProfilePage = () => {
         }
 
       </main>
-    </PageLayout>
+    </PageLayoutSecondary>
   );
   
 };

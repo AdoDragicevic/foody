@@ -1,7 +1,7 @@
 import { RequestStatus } from "../models/htttp";
 import ProfileForm from "../components/profile/ProfileForm";
-import PageLayout from "../components/layout/PageLayout";
 import useFetchProfile from "../hooks/profile/useFetchProfile";
+import PageLayoutSecondary from "../components/layout/PageLayoutSecondary";
 
 
 const ProfileEditPage = () => {
@@ -9,7 +9,7 @@ const ProfileEditPage = () => {
   const [requestStatus, user, profile] = useFetchProfile();
 
   return (
-    <PageLayout>
+    <PageLayoutSecondary>
       <main className="profile-page__main">
 
         {
@@ -33,7 +33,7 @@ const ProfileEditPage = () => {
         }
 
       </main>
-    </PageLayout>
+    </PageLayoutSecondary>
   );
 
 };

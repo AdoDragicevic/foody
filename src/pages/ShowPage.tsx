@@ -12,8 +12,6 @@ const ShowPage = () => {
 
   if (!restaurant) return <h2>Restaurant is currently unavailable.</h2>;
 
-  console.log(restaurant);
-
   return (
     <PageLayout>
       <main className="show-page__main">
