@@ -8,6 +8,7 @@ import IndexPage from "../pages/IndexPage";
 import ProfilePage from "../pages/ProfilePage";
 import ProfileEditPage from "../pages/ProfileEditPage";
 import ShowPage from "../pages/ShowPage";
+import OrdersPage from "../pages/OrdersPage";
 
 
 const Router = () => {
@@ -29,11 +30,11 @@ const Router = () => {
       
       <Route path="/profile/edit" element={ auth ? <ProfileEditPage /> : <AuthPage /> } />
       
-      <Route path="/orders" element={ auth ? <p>Orders page!</p> : <AuthPage /> } />
+      <Route path="/orders" element={ auth ? <OrdersPage /> : <AuthPage /> } />
       
       <Route path="/cart" element={ <CartPage /> } />
       
-      <Route path="/auth" element={ auth ? <p>You are logged in!</p> : <AuthPage /> } />
+      <Route path="/auth" element={ auth ? <Navigate to="/profile" /> : <AuthPage /> } />
 
       <Route path="/page-not-found" element={<p>Page not found</p>} />
 

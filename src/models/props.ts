@@ -4,7 +4,7 @@ import { ObjectWithId } from "./util";
 import { PriceRange } from "./price";
 import { RestaurantContact } from "../models/restaurant";
 import { CartItem, CartItems } from "./cart";
-import { User } from "../models/user";
+import { Orders, User } from "../models/user";
 
 
 export interface ChildrenProp {
@@ -126,4 +126,8 @@ export interface ProfileFormProps {
   userId: string;
   userEmail: string;
   user: User | null;
+}
+
+export interface OrderListProps {
+  orders: Orders;
 }

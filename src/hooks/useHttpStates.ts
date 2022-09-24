@@ -19,7 +19,6 @@ const useHttpStates = <T>(isLoading = false) => {
     .then( (data: T) => {
       setData(data);
       setRequestStatus(RequestStatus.SUCCESS);
-      console.log(data);
     })
     .catch( () => {
       setRequestStatus(RequestStatus.ERROR);

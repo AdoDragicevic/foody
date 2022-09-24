@@ -10,3 +10,7 @@ export const fetchAddOrder = (userId: string, order: Order) => (
     }
   })
 );
+
+export const fetchOrders = (userId: string) => (
+  fetch(`https://foody-db-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/orders.json`)
+);
