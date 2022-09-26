@@ -10,7 +10,7 @@ const useFetchOrders = (): [Orders | null, RequestStatus] => {
 
   const { auth } = useContext(AuthCtx);
 
-  const { sendRequest, requestStatus, data } = useHttpStates<Orders>(true);
+  const [ sendRequest, requestStatus, data ] = useHttpStates<Orders>(true);
 
   useEffect( () => {
     if (auth?.localId) {

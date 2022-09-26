@@ -1,4 +1,5 @@
 import { CartItems } from "./cart";
+import { dateFormater } from "../helpers/util";
 
 
 export interface User {
@@ -26,10 +27,10 @@ export interface UserContact {
 
 export class Order {
 
-  public date = new Date();
+  public date = dateFormater(new Date(), "-");
 
   constructor(
-    public restaurantId: string, 
+    public restaurant: { id: string, name: string },
     public items: CartItems
   ) {};
 }

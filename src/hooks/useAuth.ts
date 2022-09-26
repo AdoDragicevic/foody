@@ -10,7 +10,7 @@ const useAuth = () => {
   
   const [auth, setAuth] = useStateAndLocStrg<AuthResponseData | null>("foody-auth", null);
 
-  const { sendRequest, requestStatus, data } = useHttpStates<AuthResponseData>(false);
+  const [ sendRequest, requestStatus, data ] = useHttpStates<AuthResponseData>(false);
 
   const dispatch = useMemo(() => ({
     logIn(email: string, password: string) {

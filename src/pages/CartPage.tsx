@@ -8,17 +8,19 @@ const CartPage = () => {
 
   const {
     restaurantId,
+    restaurantName,
     items, 
     totalPrice, 
-    orderStatus, 
+    orderStatus,
     handleRemoveItem, 
-    handleOrder 
+    handleOrder
   } = useCartOrder();
 
   return (
     <PageLayoutSecondary>
       <main className="cart-page__main">
         <h1 className="h-thin mt-lg">Cart</h1>
+        {restaurantName && <h3>Restaurant: {restaurantName}</h3>}
         <CartItemList items={items} onRemoveItem={handleRemoveItem} />
         <h2 className="cart-page__price"> &euro; {totalPrice.toFixed(2)} </h2>
         <Link 
@@ -29,7 +31,7 @@ const CartPage = () => {
         </Link>
         <button 
           className="btn btn-main mt-xl" 
-          disabled={totalPrice === 0}
+          disabled={totalPrice === 0 || !restaurantName}
           onClick={handleOrder}
         >
           Order Now

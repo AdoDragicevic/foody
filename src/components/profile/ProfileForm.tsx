@@ -11,7 +11,7 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
 
   const navigate = useNavigate();
   
-  const { sendRequest, requestStatus } = useHttpStates(false);
+  const [ sendRequest, requestStatus ] = useHttpStates(false);
 
   useEffect( () => {
     if (requestStatus === RequestStatus.SUCCESS) {

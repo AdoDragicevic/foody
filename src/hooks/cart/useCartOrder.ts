@@ -7,6 +7,7 @@ import { AuthCtx } from "../../contexts/auth-context";
 import { fetchAddOrder } from "../../helpers/http/http-order";
 import { RequestStatus } from "../../models/htttp";
 import { getCartItemsTotalPrice } from "../../helpers/cart";
+import useFetchRestaurant from "../useFetchRestaurant";
 
 
 const useCartOrder = () => {
@@ -19,7 +20,11 @@ const useCartOrder = () => {
   
   const dispatch = useContext(CartDispatchCtx);
 
-  const { sendRequest, requestStatus: orderStatus } = useHttpStates<Order>();
+  const [ sendRequest, orderStatus ] = useHttpStates<Order>();
+
+  const [ restaurant ] = useFetchRestaurant(restaurantId);
+
+  const restaurantName = restaurant?.name || null;
 
   useEffect( () => {
     if (orderStatus === RequestStatus.SUCCESS) {
@@ -31,12 +36,16 @@ const useCartOrder = () => {
     dispatch({ type: "remove_item", itemId });
   }
 
-  const handleOrder = () => {
+  const handleOrder = async () => {
     if (!auth) {
       navigate("/auth");
       return;
     }
-    const order = new Order(restaurantId, items);
+    if (!restaurantName) {
+      return;
+    }
+    const restaurant = { id: restaurantId, name: restaurantName };
+    const order = new Order(restaurant, items);
     const userId = auth.localId;
     const fetch = fetchAddOrder.bind(null, userId, order);
     sendRequest(fetch);
@@ -46,6 +55,7 @@ const useCartOrder = () => {
 
   return {
     restaurantId,
+    restaurantName,
     items,
     totalPrice,
     orderStatus,

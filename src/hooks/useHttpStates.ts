@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { RequestStatus } from "../models/htttp";
 
 
-const useHttpStates = <T>(isLoading = false) => {
+const useHttpStates = <T>(isLoading = false): [(requestFn: () => Promise<Response>) => void, RequestStatus, T | null ] => {
 
   const initialRequestStatus = isLoading ? RequestStatus.LOADING : RequestStatus.NONE;
     
@@ -25,11 +25,7 @@ const useHttpStates = <T>(isLoading = false) => {
     })
   }, []);
 
-  return {
-    sendRequest,
-    requestStatus,
-    data
-  }
+  return [ sendRequest, requestStatus, data ];
 };
 
 export default useHttpStates;

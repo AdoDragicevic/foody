@@ -14,12 +14,12 @@ const OrderList = ({ orders }: OrderListProps) => {
 
   return (
     <ul className="orders-list">
-      {ordersList.map( (order, i) => (
-        <li key={`${order.restaurantId}-${i}`} >
+      {ordersList.reverse().map( (order, i) => (
+        <li className="orders-list__item" key={`${order.restaurant.id}-${i}`} >
           <OrderItem {...order} />
         </li>
       ))}
-    </ul>    
+    </ul>
   );
 
 };

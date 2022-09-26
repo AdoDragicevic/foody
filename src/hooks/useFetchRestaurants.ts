@@ -8,7 +8,7 @@ import { ObjectWithId } from "../models/util";
 
 const useFetchRestaurants = (isLoading = false): [(Restaurant & ObjectWithId)[], RequestStatus] => {
 
-  const { data, requestStatus, sendRequest } = useHttpStates<{ [id: string]: Restaurant }>(isLoading);
+  const [ sendRequest, requestStatus, data ] = useHttpStates<{ [id: string]: Restaurant }>(isLoading);
 
   useEffect( () => sendRequest(fetchRestaurants), [sendRequest]);
 

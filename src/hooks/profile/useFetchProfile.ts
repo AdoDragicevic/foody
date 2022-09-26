@@ -12,7 +12,7 @@ const useFetchProfile = (): [RequestStatus, AuthResponseData, User | null] => {
   
   if (!auth) throw new Error("useFetchProfiles requires user authentication");
 
-  const { sendRequest, requestStatus, data } = useHttpStates<User>(false);
+  const [ sendRequest, requestStatus, data ] = useHttpStates<User>(false);
 
   useEffect( () => {
     if (auth.localId) {

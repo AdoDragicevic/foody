@@ -4,7 +4,7 @@ import { Order } from "../../models/user";
 import OrderItemDetails from "./OrderItemDetails";
 
 
-const OrderItem = ({ date, items, restaurantId }: Order) => {
+const OrderItem = ({ date, items, restaurant }: Order) => {
 
   const itemsList: CartItem[] = [];
 
@@ -14,7 +14,6 @@ const OrderItem = ({ date, items, restaurantId }: Order) => {
   };
 
   const itemListEl = itemsList.map( ({ id, menuItem, selectedOption, selectedExtras }) => (
-    <li key={id}>
       <OrderItemDetails 
         id={id}
         name={menuItem.name}
@@ -22,23 +21,23 @@ const OrderItem = ({ date, items, restaurantId }: Order) => {
         price={menuItem.price} 
         options={[...selectedOption]}
       />
-    </li>
   ));
 
   const totalPrice = itemsList.reduce( (acc, curr) => (
     acc += curr.quantity * curr.menuItem.price
   ), 0);
 
-  //const dateOfOrder = dateFormater(date, "/");
-
   return (
     <article>
-      <h4>{}</h4>
-      <ul> {itemListEl} </ul>
+      <h2>{restaurant.name}</h2>
+      <h4>{date}</h4>
+      <div>
+        {itemListEl}
+      </div>
       <h4> &euro; {totalPrice}</h4>
       <footer>
-        <Link to={`/restaurants/${restaurantId}`}> Visit Restaurant </Link>
-        <Link to={`/restaurants/${restaurantId}/reviews`}> Review Restaurant </Link>
+        <Link to={`/restaurants/${restaurant.id}`}> Visit Restaurant </Link>
+        <Link to={`/restaurants/${restaurant.id}/reviews`}> Review Restaurant </Link>
       </footer>
     </article>
   );

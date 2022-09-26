@@ -1,0 +1,16 @@
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
+  list-style: none;
+
+  &__item {
+    margin: 2rem 0;
+    border-radius: 4px;
+    border: 1px solid $color-gray;
+    padding: 2rem 4rem;
+  }
+
+}

@@ -19,5 +19,7 @@ export const dateFormater = (date: Date, separator: "/" | "." | "-") => {
   if (day < 10) day = '0' + day;
   if (month < 10) month = '0' + month;
 
+  console.log(day + separator + month + separator + year);
+
   return day + separator + month + separator + year;
 }

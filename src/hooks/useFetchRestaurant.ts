@@ -7,7 +7,7 @@ import { RequestStatus } from "../models/htttp";
 
 const useFetchRestaurant = (restaurantId: string): [Restaurant | null, RequestStatus] => {
 
-  const { data, requestStatus, sendRequest } = useHttpStates<Restaurant>(true);
+  const [ sendRequest, requestStatus, data ] = useHttpStates<Restaurant>(true);
 
   useEffect( () => {
     sendRequest(fetchRestaurant.bind(null, restaurantId))
