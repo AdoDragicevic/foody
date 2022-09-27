@@ -19,7 +19,10 @@ const RestaurantMenuFormOptions = ({ options, onChange }: RestaurantMenuFormOpti
             name="option" 
             onChange={onChange} 
           />    
-          <label className="restaurant-menu-form__label" htmlFor={`${i}-option`}> {option} </label>
+          <label className="restaurant-menu-form__label" htmlFor={`${i}-option`}> 
+            <div className="checkbox mr-sm"></div>
+            {option}
+          </label>
         </div>
       )) }
     </fieldset>

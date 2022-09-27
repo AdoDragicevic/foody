@@ -17,11 +17,12 @@ const RestaurantMenuFormExtras = ({ extras, onChange }: RestaurantMenuFormExtras
             onChange={ () => onChange(extra)}
           />
           <label className="restaurant-menu-form__label restaurant-menu-form__label--extra" htmlFor={extra.id}>  
+            <div className="checkbox mr-sm"></div>
             <span>
               {extra.name}
             </span>
-            <span>
-              {extra.price.toFixed(2)} 
+            <span className="restaurant-menu-form__price">
+              &euro; {extra.price.toFixed(2)} 
             </span>
           </label>
         </div>
