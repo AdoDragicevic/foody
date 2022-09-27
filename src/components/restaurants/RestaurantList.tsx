@@ -8,7 +8,7 @@ const RestaurantList = ({ restaurants }: RestaurantListProps) => {
   
   const items = restaurants.map( restaurant => (
     <li key={restaurant.id}>
-      <Link to={`${restaurant.id}`}>
+      <Link to={`/restaurants/${restaurant.id}`}>
         <Card>
           <Restaurant {...restaurant} />
         </Card>
