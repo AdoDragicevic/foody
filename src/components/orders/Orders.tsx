@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import useFetchOrders from "../../hooks/orders/useFetchOrders";
 import { RequestStatus } from "../../models/htttp";
 import OrdersList from "./OrderList";
