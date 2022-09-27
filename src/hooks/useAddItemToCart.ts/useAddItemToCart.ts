@@ -24,6 +24,7 @@ const useAddItemToCart = (menuItem: MenuItem) => {
 
   const addItem = () => {
     if (!restaurantId) throw new Error("missing: restaurant id from URL");
+    if (isDifferentRestaurant) cartDispatch({ type: "remove_all" });
     const cartItem = new CartItem(menuItem, selectedExtras, selectedOption, quantity);
     cartDispatch({ type: "add_item", cartItem, restaurantId });
   }

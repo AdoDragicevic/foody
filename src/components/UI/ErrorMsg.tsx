@@ -1,6 +1,6 @@
-import { BsExclamationLg } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { ErrorMsgProps } from "../../models/props";
+import WarningIcon from "./WarningIcon";
 
 
 const ErrorMsg = ({ text }: ErrorMsgProps) => {
@@ -9,9 +9,7 @@ const ErrorMsg = ({ text }: ErrorMsgProps) => {
   
   return (
     <article className="error-msg">
-      <div className="error-msg__icon-box">
-        <BsExclamationLg />
-      </div>
+      <WarningIcon />
       <h2 className="h-tertiary mt-md mb-lg">{ text }</h2>
       <button className="btn btn-main" onClick={() => navigate(-1)}> 
         Go Back 

@@ -4,6 +4,7 @@ import RestaurantMenuFormOptions from "./RestaurantMenuFormOptions";
 import RestaurantMenuFormBtns from "./RestaurantMenuFormBtns";
 import RestaurantMenuFormExtras from "./RestaurantMenuFormExtras";
 import useAddItemToCart from "../../../../hooks/useAddItemToCart.ts/useAddItemToCart";
+import WarningIcon from "../../../UI/WarningIcon";
 
 
 const RestaurantMenuForm = ({ item, extras, onClose }: RestaurantMenuFormProps) => {
@@ -41,11 +42,15 @@ const RestaurantMenuForm = ({ item, extras, onClose }: RestaurantMenuFormProps) 
         price={data.price}
         quantity={data.quantity} 
       />
-
       {isDifferentRestaurant && (
-        <p>Cart includes items from a different restaurant. They will be deleted if this item is added.</p>
+        <div className="restaurant-menu-form__warning mt-lg">
+          <WarningIcon />
+          <p>
+            Cart holds items from another restaurant! 
+            They will be deleted if this item is added!
+          </p>
+        </div>
       )}
-      
     </form>
   )
 };
