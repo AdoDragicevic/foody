@@ -131,3 +131,7 @@ export interface ProfileFormProps {
 export interface OrderListProps {
   orders: Orders;
 }
+
+export interface ErrorMsgProps {
+  text: string;
+}

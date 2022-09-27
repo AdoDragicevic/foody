@@ -13,12 +13,12 @@ const useFetchRestaurants = (isLoading = false): [(Restaurant & ObjectWithId)[],
   useEffect( () => sendRequest(fetchRestaurants), [sendRequest]);
 
   // in db Restaurant is stored without id, after fetch we add the key under which it's stored as its id
-  const list: [] | (Restaurant & ObjectWithId)[] = ( () => {
+  const restaurants: (Restaurant & ObjectWithId)[] = ( () => {
     if (data === null) return [];
     return Object.keys(data).map(key => ({ ...data[key], id: key }));
   } )();
 
-  return [list, requestStatus];
+  return [restaurants, requestStatus];
 };
 
 export default useFetchRestaurants;

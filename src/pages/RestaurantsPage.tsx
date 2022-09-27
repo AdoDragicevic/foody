@@ -4,7 +4,7 @@ import Search from "../components/search/Search";
 import RestaurantFilters from "../components/restaurants/restaurantFilters/RestaurantFilters";
 import FilterRestaurantList from "../components/restaurants/FilterRestaurantList";
 
-const IndexPage = () => {
+const RestaurantsPage = () => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const IndexPage = () => {
         <Search />
       </Header>
 
-      <main className="index-page__main">
+      <main className="restaurants-page__main">
         <RestaurantFilters />
         <FilterRestaurantList />
       </main>
@@ -22,4 +22,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default RestaurantsPage;

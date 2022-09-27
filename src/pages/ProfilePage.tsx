@@ -3,6 +3,8 @@ import { RequestStatus } from "../models/htttp";
 import useFetchProfile from "../hooks/profile/useFetchProfile";
 import Profile from "../components/profile/Profile";
 import PageLayoutSecondary from "../components/layout/PageLayoutSecondary";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
+import ErrorMsg from "../components/UI/ErrorMsg";
 
 
 const ProfilePage = () => {
@@ -15,12 +17,12 @@ const ProfilePage = () => {
         
         {
           requestStatus === RequestStatus.LOADING && 
-          <p>Loading...</p>
+          <LoadingSpinner />
         }
         
         {
           requestStatus === RequestStatus.ERROR &&
-          <p>Error...</p>
+          <ErrorMsg text="Unable to access profile. Please, try again later." />
         }
 
         {

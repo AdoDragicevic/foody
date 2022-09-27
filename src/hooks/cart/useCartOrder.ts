@@ -29,8 +29,9 @@ const useCartOrder = () => {
   useEffect( () => {
     if (orderStatus === RequestStatus.SUCCESS) {
       dispatch({ type: "remove_all" });
+      navigate("/");
     }
-  }, [orderStatus, dispatch]);
+  }, [orderStatus, dispatch, navigate]);
 
   const handleRemoveItem = (itemId: string) => {
     dispatch({ type: "remove_item", itemId });

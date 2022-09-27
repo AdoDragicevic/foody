@@ -11,14 +11,13 @@
 @import "./layout/modal";
 
 @import "./pages/home-page";
-@import "./pages/index-page";
-@import "./pages/show-page";
+@import "./pages/restaurants-page";
+@import "./pages/restaurant-page";
 @import "./pages/cart-page";
 @import "./pages/auth-page";
 @import "./pages/profile-page";
 
 @import "./components/btn";
-@import "./components/card";
 @import "./components/picture-card";
 @import "./components/restaurant-list";
 @import "./components/restaurant-filters";
@@ -38,3 +37,7 @@
 @import "./components/order-item";
 
 @import "./UI/form";
+@import "./UI/card";
+@import "./UI/error-msg";
+@import "./UI/loading-spinner";
+@import "./UI/loading-card";

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const RestaurantList = ({ restaurants }: RestaurantListProps) => {
   
   const items = restaurants.map( restaurant => (
-    <li className="restaurant-list__item" key={restaurant.id}>
+    <li key={restaurant.id}>
       <Link to={`${restaurant.id}`}>
         <Card>
           <Restaurant {...restaurant} />

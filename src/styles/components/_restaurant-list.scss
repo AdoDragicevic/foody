@@ -1,13 +1,9 @@
 .restaurant-list {
-
   list-style: none;
   display: grid;
   gap: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   margin: 5rem auto;
-
-
-  &__item {
-    
-  }
+  flex-grow: 1;
+  padding: 2rem;
 }
