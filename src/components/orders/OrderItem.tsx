@@ -14,6 +14,7 @@ const OrderItem = ({ date, items, restaurant }: Order) => {
   };
 
   const itemListEl = itemsList.map( ({ id, menuItem, selectedOption, selectedExtras }) => (
+    <li key={id}>
       <OrderItemDetails 
         id={id}
         name={menuItem.name}
@@ -21,6 +22,7 @@ const OrderItem = ({ date, items, restaurant }: Order) => {
         price={menuItem.price} 
         options={[...selectedOption]}
       />
+    </li>
   ));
 
   const totalPrice = itemsList.reduce( (acc, curr) => (
@@ -28,16 +30,26 @@ const OrderItem = ({ date, items, restaurant }: Order) => {
   ), 0);
 
   return (
-    <article>
-      <h2>{restaurant.name}</h2>
-      <h4>{date}</h4>
-      <div>
+    <article className="order-item">
+      <h4 className="order-item__date">{date}</h4>
+      <h2 className="h-tertiary order-item__restaurant">{restaurant.name}</h2>
+      <ul className="order-item__details">
         {itemListEl}
-      </div>
-      <h4> &euro; {totalPrice}</h4>
-      <footer>
-        <Link to={`/restaurants/${restaurant.id}`}> Visit Restaurant </Link>
-        <Link to={`/restaurants/${restaurant.id}/reviews`}> Review Restaurant </Link>
+      </ul>
+      <h4 className="order-item__price"> &euro; {totalPrice}</h4>
+      <footer className="order-item__footer">
+        <Link
+          className="order-item__restaurant-link" 
+          to={`/restaurants/${restaurant.id}`}
+        > 
+          Visit Restaurant 
+        </Link>
+        <Link 
+          className="order-item__review-link"
+          to={`/restaurants/${restaurant.id}/reviews`}
+        > 
+          Review Restaurant 
+        </Link>
       </footer>
     </article>
   );

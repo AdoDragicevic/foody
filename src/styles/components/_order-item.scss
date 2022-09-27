@@ -1,0 +1,54 @@
+.order-item {
+  position: relative;
+  padding: 2rem 5rem 4rem 5rem;
+  text-align: center;
+  border: 1px solid $color-gray;
+
+  &__restaurant {
+    
+  }
+
+  &__date {
+    font-size: 1.3rem;
+    position: absolute;
+    top: .5rem;
+    left: 2rem;
+    letter-spacing: 2px;
+  }
+
+  &__details {
+    font-size: 1.5rem;
+    text-align: start;
+    margin: 1rem 0;
+  }
+
+  &__price {
+    font-size: 1.4rem;
+    text-align: end;
+  }
+
+  &__footer {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__restaurant-link,
+  &__review-link {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: all .2s;
+    color: $color-black;
+    background-color: $color-primary;
+    border: 1px solid black;
+    
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+}
