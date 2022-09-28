@@ -21,10 +21,12 @@ const HomePage = () => (
           <h1 className="h-primary mt-lg mb-xs">Welcome to Foody!</h1>
           <h3 className="h-thin">Best restaurants at your dispsal</h3>
         </div>
-        <Link to="/restaurants" className="home-page__btn btn btn--shadow btn-main">Find all restaurants</Link>
+        <Link to="/restaurants" className="home-page__btn btn btn--shadow btn-main">
+          Find all restaurants
+        </Link>
       </section>
       <svg className="home-page__curve" viewBox="0 0 1440 200">
-        <path fill="#FFC244" fill-opacity="1" d="M0,128L120,117.3C240,107,480,85,720,85.3C960,85,1200,107,1320,117.3L1440,128L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
+        <path fill="#FFC244" fillOpacity="1" d="M0,128L120,117.3C240,107,480,85,720,85.3C960,85,1200,107,1320,117.3L1440,128L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
         </path>
       </svg>
 
@@ -32,7 +34,9 @@ const HomePage = () => (
       <section className="home-page__section home-page__section--special-offers">
         <h3 className="h-thin">Special offers</h3>
         <SpecialOfferList />
-        <Link to="/restaurants?criteria=discount" className="btn btn--shadow btn-secondary">More offers</Link>
+        <Link to="/restaurants?criteria=discount" className="btn btn--shadow btn-secondary">
+          More offers
+        </Link>
       </section>
 
     
@@ -41,7 +45,7 @@ const HomePage = () => (
         <ul className="home-page__list">
           
           <li className="home-page__list-item">
-            <Feature icon={<IoRestaurantOutline />} title="Great food" description="Excellent selection of best restaurants in yout town." />
+            <Feature icon={<IoRestaurantOutline />} title="Great food" description="Excellent selection of best restaurants in town." />
           </li>
 
           <li className="home-page__list-item">
