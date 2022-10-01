@@ -1,5 +1,5 @@
 import { CartItems } from "../models/cart";
-import { ExtraOrder } from "../models/restaurant";
+import { ExtraOrder, MenuItem } from "../models/restaurant";
 
 
 export const getCartItemId = (menuItemId: string, selectedExtras: ExtraOrder[], selectedOption: string): string => {
@@ -9,12 +9,12 @@ export const getCartItemId = (menuItemId: string, selectedExtras: ExtraOrder[], 
   return `${menuItemId}-o-${selectedOption}-e-${extrasId}`;
 };
 
-export const getCartItemsTotalPrice = (items: CartItems) => {
-  let totalPrice = 0;
-  for (let key in items) {
-    const { price } = items[key].menuItem;
-    const { quantity } = items[key];
-    totalPrice += price * quantity;
-  }
-  return totalPrice;
+export const getCartItemTotalPrice = (item: MenuItem, selectedExtras: ExtraOrder[], quantity: number) => {
+  const oneItemPrice = item.price + selectedExtras.reduce((acc, curr) => acc += curr.price, 0);
+  const allItemsPrice = oneItemPrice * quantity;
+  return allItemsPrice;
 }
+
+export const getCartItemsTotalPrice = (items: CartItems) => (
+  Object.values(items).reduce((acc, curr) => acc += curr.totalPrice, 0)
+);

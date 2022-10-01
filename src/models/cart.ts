@@ -1,10 +1,10 @@
 import { ExtraOrder, MenuItem } from "./restaurant";
-import { getCartItemId } from "../helpers/cart";
-
+import { getCartItemId, getCartItemTotalPrice } from "../helpers/cart";
 
 export class CartItem {
 
   public id: string;
+  public totalPrice: number;
 
   constructor(
     public menuItem: MenuItem, 
@@ -13,6 +13,7 @@ export class CartItem {
     public quantity: number
     ) {
       this.id = getCartItemId(menuItem.id, selectedExtras, selectedOption);
+      this.totalPrice = getCartItemTotalPrice(menuItem, selectedExtras, quantity);
     }
 }
 
