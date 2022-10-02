@@ -80,7 +80,9 @@ const AuthPage = () => {
             )
           }
           <footer className="form__btns">
-            <button className="form__btn btn btn-main" type="submit">Submit</button>
+            <button className="form__btn btn btn-main" type="submit" autoFocus>
+              Submit
+            </button>
             <button 
               className="btn btn-secondary mt-lg txt" 
               type="button" 
