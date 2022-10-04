@@ -7,7 +7,7 @@ const PictureCard = ({ title, img, leadsToUrl }: PictureCardProps) => (
   <Link to={leadsToUrl} className="picture-card">
     <img className="picture-card__img" src={img} alt="employee" />
     <h2 className="picture-card__title h-secondary">{title}</h2>
-    <button className="picture-card__btn btn" to={leadsToUrl}>
+    <button className="picture-card__btn btn">
       <HiArrowNarrowRight />
     </button>
   </Link>
