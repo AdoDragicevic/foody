@@ -43,7 +43,7 @@
   outline: none;
   position: relative;
 
-  &:invalid:not(:focus) {
-    border-bottom: 2px solid orangered;
+  &:focus {
+    
   }
 }

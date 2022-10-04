@@ -135,3 +135,11 @@ export interface OrderListProps {
 export interface ErrorMsgProps {
   text: string;
 }
+
+export interface InputGroupProps {
+  name: string;
+  type: string;
+  value: string;
+  errorMsg: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
