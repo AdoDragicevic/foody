@@ -43,7 +43,7 @@ const AuthPage = () => {
   return (
     <PageLayout>
       <main className="auth-page__main">
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form mt-xl" onSubmit={handleSubmit}>
           <h2 className="h-secondary txt-center mb-md"> {isLogIn ? "LogIn" : "SignUp"} </h2>
           <fieldset className="fieldset">
             <label className="label" htmlFor="email">Email</label>
@@ -54,8 +54,6 @@ const AuthPage = () => {
               value={email} 
               onChange={updateEmail} 
             />
-          </fieldset>
-          <fieldset className="fieldset">
             <label className="label" htmlFor="password">Password</label>
             <input 
               id="password" 
@@ -80,7 +78,7 @@ const AuthPage = () => {
             )
           }
           <footer className="form__btns">
-            <button className="form__btn btn btn-main" type="submit" autoFocus>
+            <button className="btn btn-main" type="submit" autoFocus>
               Submit
             </button>
             <button 
