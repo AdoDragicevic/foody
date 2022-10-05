@@ -1,0 +1,32 @@
+.input-group {
+  
+  &__label {
+
+  }
+
+  &__input {
+    width: 100%;
+    height: 4rem;
+    font-family: inherit;
+    padding: .5rem 1rem;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 2px solid $color-black;
+    outline: none;
+    position: relative;
+
+    &--error {
+      border-bottom: 2px solid rgb(180, 1, 1);
+    }
+  }
+
+  &__error {
+    color:rgb(180, 1, 1);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding: .3rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+}

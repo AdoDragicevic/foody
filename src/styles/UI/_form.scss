@@ -26,24 +26,5 @@
   & > * {
     margin: 1rem 0;
   }
-}
 
-.label {
-  
-}
-
-.input {
-  width: 100%;
-  height: 4rem;
-  font-family: inherit;
-  padding: .5rem 1rem;
-  font-size: 2rem;
-  border: none;
-  border-bottom: 2px solid $color-black;
-  outline: none;
-  position: relative;
-
-  &:focus {
-    
-  }
 }
