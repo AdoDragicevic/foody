@@ -19,8 +19,8 @@ export interface UserContact {
   address: {
     street: string;
     streetNumber: string;
-    postalCode: number;
-    floor: number;
+    postalCode: string;
+    floor: string;
     comments: string;
   }
 }

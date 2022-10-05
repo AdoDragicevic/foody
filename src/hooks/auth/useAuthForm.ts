@@ -1,9 +1,11 @@
-import { FormEvent, useContext, useState } from "react";
+import { useEffect, FormEvent, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthCtx } from "../../contexts/auth-context";
 import useToggle from "../../hooks/useToggle";
 import { useInputValidate } from "../../hooks/form/useInputValidate";
+
 import { isEmailValid, isPasswordValid } from "../../helpers/form";
+import { RequestStatus } from "../../models/htttp";
 
 
 const useAuthForm = () => {
@@ -14,6 +16,12 @@ const useAuthForm = () => {
 
   const [isLogIn, toggleIsLogIn] = useToggle();
   const [wasSubmittedOnce, setWasSubmittedOnce] = useState(false);
+
+  useEffect( () => {
+    if (requestStatus === RequestStatus.SUCCESS) {
+      navigate("/profile");
+    }
+  }, [requestStatus, navigate] );
 
   const email = useInputValidate("", isEmailValid);
   const password = useInputValidate("", isPasswordValid);
@@ -30,7 +38,6 @@ const useAuthForm = () => {
     if (!isLogIn && password.value !== confirmPassword.value) return;
     const { logIn, signUp } = dispatch;
     isLogIn ? logIn(email.value, password.value) : signUp(email.value, password.value);
-    navigate("/profile");
   };
 
   return {

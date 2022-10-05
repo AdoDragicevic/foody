@@ -21,7 +21,7 @@ const AuthForm = () => {
         <InputGroup 
           name="email" 
           type="email" 
-          onChange={email.onUpdate} 
+          onChange={email.onChange} 
           errorMsg={email.error} 
           value={email.value}
         />
@@ -29,7 +29,7 @@ const AuthForm = () => {
         <InputGroup 
           name="password" 
           type="password" 
-          onChange={password.onUpdate} 
+          onChange={password.onChange} 
           errorMsg={password.error} 
           value={password.value}
         />
@@ -39,7 +39,7 @@ const AuthForm = () => {
           <InputGroup 
             name="confirm password" 
             type="password" 
-            onChange={confirmPassword.onUpdate} 
+            onChange={confirmPassword.onChange} 
             errorMsg={confirmPassword.error} 
             value={confirmPassword.value} 
           />

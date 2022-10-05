@@ -9,7 +9,7 @@ import ErrorMsg from "../components/UI/ErrorMsg";
 
 const ProfilePage = () => {
 
-  const [requestStatus, , user] = useFetchProfile();
+  const [requestStatus, , profile] = useFetchProfile();
 
   return (
     <PageLayoutSecondary>
@@ -26,13 +26,13 @@ const ProfilePage = () => {
         }
 
         {
-          requestStatus === RequestStatus.SUCCESS && !user &&
+          requestStatus === RequestStatus.SUCCESS && !profile &&
           <Navigate to="/profile/edit" />
         }
         
         {
-          requestStatus === RequestStatus.SUCCESS && user &&
-          <Profile {...user} />
+          requestStatus === RequestStatus.SUCCESS && profile &&
+          <Profile { ...profile } />
         }
 
       </main>

@@ -123,9 +123,7 @@ export interface CartItemProps {
 }
 
 export interface ProfileFormProps {
-  userId: string;
-  userEmail: string;
-  user: User | null;
+  profile: User | null;
 }
 
 export interface OrderListProps {

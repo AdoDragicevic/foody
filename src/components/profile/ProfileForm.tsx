@@ -1,17 +1,19 @@
-import { FormEvent, useEffect } from "react";
-import useHttpStates from "../../hooks/useHttpStates";
-import { User } from "../../models/user";
-import { fetchReplaceProfile } from "../../helpers/http/http-profile";
+import { useState, FormEvent, useEffect } from "react";
 import { RequestStatus } from "../../models/htttp";
 import { useNavigate } from "react-router-dom";
 import { ProfileFormProps } from "../../models/props";
+import { useInputValidate } from "../../hooks/form/useInputValidate";
+import InputGroup from "../UI/InputGroup";
+import useUpdateProfile from "../../hooks/profile/useUpdateProfile";
 
 
-const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
+const ProfileForm = ( { profile }: ProfileFormProps) => {
 
   const navigate = useNavigate();
   
-  const [ sendRequest, requestStatus ] = useHttpStates(false);
+  const [ sendRequest, requestStatus ] = useUpdateProfile();
+
+  const [wasSubmittedOnce, setWasSubmittedOnce] = useState(false);
 
   useEffect( () => {
     if (requestStatus === RequestStatus.SUCCESS) {
@@ -19,73 +21,113 @@ const ProfileForm = ( { userId, userEmail, user }: ProfileFormProps) => {
     }
   }, [requestStatus, navigate]);
 
+  const name = useInputValidate(profile ? profile.name : "", () => false);
+  const phone = useInputValidate(profile ? profile.contact.phone : "", () => false);
+  const streetName = useInputValidate(profile ? profile.contact.address.street : "", () => false);
+  const streetNumber = useInputValidate(profile ? profile.contact.address.streetNumber : "", () => false);
+  const postalCode = useInputValidate(profile ? profile.contact.address.postalCode : "", () => false);
+  const floor = useInputValidate(profile ? profile.contact.address.postalCode : "0", () => false);
+  const comment = useInputValidate(profile ? profile.contact.address.postalCode : "", () => true);
+
+  const nameErrorMsg = wasSubmittedOnce && !name.isValid ? "Invalid email!" : "";
+  const phoneErrorMsg = wasSubmittedOnce && !phone.isValid ? "Invalid phone number!" : "";
+  const streetNameErrorMsg = wasSubmittedOnce && !streetName.isValid ? "Street name is required." : "";
+  const streetNumberErrorMsg = wasSubmittedOnce && !streetNumber.isValid ? "Street number is required." : "";
+  const postalCodeErrorMsg = wasSubmittedOnce && !postalCode.isValid ? "Postal code is required." : "";
+  const floorErrorMsg = wasSubmittedOnce && !streetName.isValid ? "Invalid floor number! Please, provide number from -1 to 30." : "";
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
-    const id = userId;
-    const email = userEmail;
-    const orders = user?.orders || null;
-
-    const newProfile: User = {
-      id,
-      name: "Ado",
-      contact: {
-        email,
-        phone: "091 200 2071",
-        address: {
-          street: "Ilica",
-          streetNumber: "163a",
-          postalCode: 10000,
-          floor: 2,
-          comments: "No comment",
-        }
-      },
-      orders
-    };
-    const fetch = fetchReplaceProfile.bind(null, newProfile);
-    sendRequest(fetch);
+    setWasSubmittedOnce(true);
+    // sendRequest();
   };
   
   return (
     <form className="form" onSubmit={handleSubmit}>
 
       <h2 className="h-thin txt-center mb-xl">
-        {user ? "Edit" : "Create"} Profile
+        {profile ? "Edit" : "Create"} Profile
       </h2>
 
       <fieldset className="fieldset">
         <legend>Contact</legend>
 
-        <label className="label" htmlFor="name">Name</label>
-        <input className="input" id="name" type="text" />
+        <InputGroup 
+          name="name"
+          type="text"
+          value={name.value}
+          onChange={name.onChange}
+          errorMsg={nameErrorMsg}
+        />
 
-        <label className="label" htmlFor="phone">Phone</label>
-        <input className="input" id="phone" type="tel" />
+        <InputGroup 
+          name="phone"
+          type="tel"
+          value={phone.value}
+          onChange={phone.onChange}
+          errorMsg={phoneErrorMsg}
+        />
+
       </fieldset>
 
       <fieldset className="fieldset">
         <legend>Delivery Address</legend>
 
-        <label className="label" htmlFor="street-name">Street Name</label>
-        <input className="input" id="street-name" type="text" />
+        <InputGroup 
+          name="street name"
+          type="text"
+          value={streetName.value}
+          onChange={streetName.onChange}
+          errorMsg={streetNameErrorMsg}
+        />
 
-        <label className="label" htmlFor="street-num">Street Number</label>
-        <input className="input" id="street-num" type="text" />
+        <InputGroup
+          name="street name"
+          type="text"
+          value={streetName.value}
+          onChange={streetName.onChange}
+          errorMsg={streetNameErrorMsg}
+        />
 
-        <label className="label" htmlFor="postal-code">Postal Code</label>
-        <input className="input" id="postal-code" type="number" />
+        <InputGroup 
+          name="street number"
+          type="text"
+          value={streetNumber.value}
+          onChange={streetNumber.onChange}
+          errorMsg={streetNumberErrorMsg}
+        />
 
-        <label className="label" htmlFor="floor">Floor</label>
-        <input className="input" id="floor" type="number" defaultValue={0} />
+        <InputGroup 
+          name="postal code"
+          type="number"
+          value={postalCode.value}
+          onChange={postalCode.onChange}
+          errorMsg={postalCodeErrorMsg}
+        />
 
-        <label className="label" htmlFor="comment">Comment</label>
-        <input className="input" id="comment" type="fieldset" />
+        <InputGroup 
+          name="floor"
+          type="number"
+          value={floor.value}
+          onChange={floor.onChange}
+          errorMsg={floorErrorMsg}
+        />
+
+        <InputGroup 
+          name="comment"
+          type="text"
+          value={comment.value}
+          onChange={comment.onChange}
+          errorMsg=""
+        />
+
       </fieldset>
 
       <fieldset className="fieldset">
         <legend>Payment Method</legend>
 
         <div className="profile__form-btns">
+
           <input type="radio" name="payment-method" />
           <label htmlFor="cash">Cash</label>
           
